@@ -1,0 +1,20 @@
+port: 8888
+markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
+    hard_wrap: false
+    toc_levels: '1'
+highlighter: rouge
+#gems: ['bourbon', 'neat']
+exclude: [_drafts, Rakefile, node_modules, Gemfile, Gemfile.lock, README.md]
+
+sass:
+    sass_dir: _sass
+
+# Blog settings
+paginate: 5
+paginate_file: blog/index.html
+paginate_path: /blog/page:num
+permalink: /blog/:title
+excerpt_separator: <!--more-->

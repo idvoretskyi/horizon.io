@@ -7,7 +7,7 @@ body_class: landing
         <!-- hero -->
         <section class="hero">
             <div class="site-container">
-                <h1>Building modern JavaScript apps <span>never was so easy</span></h1>
+                <h1>The realtime JavaScript platform <span>Build powerful web and mobile apps that scale.</span></h1>
                 <div class="hero-install">
                     <a class="button install light" href="/install">Install Horizon <i class="right-arrow white">&rarr;</i></a>
                 </div>
@@ -30,35 +30,31 @@ body_class: landing
     <section class="intro">
         <div class="site-container">
             <div class="intro-content">
-                <h1>RethinkDB pushes JSON to your apps <strong>in realtime</strong>.</h1>
+                <h1>Horizon is a complete, open-source <strong>realtime backend</strong> for JavaScript apps.</h1>
                 <p>
-                    When your app polls for data, it becomes slow, unscalable,
-                    and cumbersome to maintain.
+                    Horizon is a standalone server (and a collection of Node.js
+                    modules) with a simple JavaScript API to quickly build your
+                    app, then scale it to millions of users.
                 </p>
                 <p>
-                    RethinkDB is the open-source, scalable database
-                    that makes building realtime apps dramatically
-                    easier.
+                    Built by the <a href="https://rethinkdb.com">RethinkDB</a>
+                    team and the open-source community, Horizon lets you build
+                    your apps with lightning speed.
                 </p>
-                <a class="button outlined dark" href="/faq">What is RethinkDB?<i class="right-arrow">go</i></a>
+                <a class="button outlined dark" href="/faq">What is Horizon?<i class="right-arrow">go</i></a>
             </div>
-            <div class="realtime-queries">
-                <p class="query">r.table(<span class="term">'game'</span>).orderBy(<span class="term">'score'</span>).limit(<span class="term">3</span>).changes()</p>
-                <div class="query-results">
-                    <div class="leaderboard-panel">
-                        <p class="title">Top player scores</p>
-                        <ul class="leaderboard-nums">
-                            <li>1.</li>
-                            <li>2.</li>
-                            <li>3.</li>
-                        </ul>
-                        <ul class="leaderboard"></ul>
-                    </div>
-                    <div class="messages-panel">
-                        <p class="title messages-title">Streaming RethinkDB results...</p>
-                        <ul class="messages"></ul>
-                    </div>
-                </div>
+            <div class="terminal-window">
+                <header>
+                    <!--<div class="button green"></div>
+                    <div class="button yellow"></div>
+                    <div class="button red"></div>-->
+                </header>
+                <section class="terminal">
+                    <div class="history"></div>
+                    $&nbsp;<span class="prompt"></span>
+                    <span class="typed-cursor"></span>
+
+                </section>
             </div>
         </div>
     </section>
@@ -66,43 +62,40 @@ body_class: landing
     <!-- features -->
     <div class="feature modern-stacks">
         <div class="site-container">
-            <h1>What's in the box?</h1>
+            <h1>What does Horizon include?</h1>
             <section class="feature-content">
                 <article>
-                    <h2>Work with your favorite stack</h2>
+                    <h2>Scalable, realtime database</h2>
                     <p>
-                        Query JSON documents with Python, Ruby, Node.js
-                        or <a href="/docs/install-drivers/">dozens of
-                        other languages</a>. Build modern apps using
-                        your favorite web framework, paired with
-                        realtime technologies like <a href="http://socket.io/">Socket.io</a>
-                        or <a href="http://signalr.net/">SignalR</a>.
+                        Horizon is built on <a
+                        href="https://rethinkdb.com">RethinkDB</a>, a massively
+                        scalable, open-source database that streams realtime
+                        updates, and scales linearly to millions of operations
+                        per second. Horizon stores JSON data, and pushes
+                        data and query results to clients in realtime.
                     </p>
                     <img src="/assets/images/landing/features/1.png">
                 </article>
                 <article>
-                    <h2>Robust architecture</h2>
+                    <h2>Authentication</h2>
                     <p>
-		      RethinkDB integrates the latest advances in
-		      database technology.  It has a modern
-		      distributed <a href="/docs/architecture">architecture</a>,
-		      a highly-optimized buffer cache, and a state of
-		      the art storage engine.  All of these components
-		      work together to create a robust, scalable,
-		      high-performance database.
+                        Authenticate users through Facebook, Twitter, Google,
+                        GitHub, and other services, and manage user accounts,
+                        sessions, and permissions through convenient APIs.
                     </p>
                     <img src="/assets/images/landing/features/2.png">
                 </article>
                 <article>
-                    <h2>Everything you need to build modern apps</h2>
+                    <h2>Modular and extensible</h2>
                     <p>
-                        Express relationships using <a href="/docs/table-joins/">joins</a>,
-                        build <a href="/docs/geo-support">location-aware apps</a>,
-                        or store <a href="/docs/storing-binary">multimedia</a>
-                        and <a href="/docs/dates-and-times">time-series</a>
-                        data. Do analytics with <a href="/docs/map-reduce/">aggregation and
-                        map/reduce</a>, and speed up your apps using
-                        flexible <a href="/docs/secondary-indexes">indexing</a>.
+                        Horizon is distributed as a standalone server for
+                        browser-based JavaScript apps. When you're ready to
+                        write custom backend code, use the Horizon modules in
+                        Node.js to smoothly transition. RethinkDB is bundled
+                        with Horizon, so you can make direct database queries on
+                        the backend using the powerful query language ReQL, for
+                        flexible joins, aggregations, binary file support, and
+                        rich querying.
                     </p>
                     <img src="/assets/images/landing/features/3.png">
                 </article>
@@ -111,7 +104,7 @@ body_class: landing
                     <p>
                         Developed by a core team of database experts
                         and over 100 contributors from around the
-                        world, RethinkDB is shaped by developers like
+                        world, Horizon is shaped by developers like
                         you participating in <a href="/community">an
                         open development process</a>.
                     </p>
@@ -123,21 +116,20 @@ body_class: landing
     <div class="feature">
         <div class="site-container">
             <section class="feature-content feature-content-two">
-                <h1>Scale your cluster in seconds</h1>
+                <h1>Scale your app in seconds</h1>
                 <p>
-                    When you're ready to scale your app, shard and replicate in
-                    a few clicks using an intuitive web UI.
+                    When you're ready to deploy your app to production, run it
+                    on the Horizon Cloud, or deploy on your own servers.
                 </p>
                 <p>
-                    If you need it, a simple API provides precise control over
-                    the cluster:
+                    Deploy your app to Horizon Cloud with a simple web UI, or
+                    powerful command-line tools:
                 </p>
-                <pre><code>r.<span class="term">table</span>(<span class="str">'games'</span>).<span class="term">reconfigure</span>(shards=5, replicas=3)</code></pre>
+                <pre><code>hz deploy</code></pre>
                 <p>
-                    Monitor your production cluster with live statistics and
-                    complete visibility into running jobs:
+                    Scale it to millions of users:
                 </p>
-                <pre><code>r.<span class="term">db</span>(<span class="str">'rethinkdb'</span>).<span class="term">table</span>(<span class="str">'jobs'</span>).<span class="term">changes</span>()</code></pre>
+                <pre><code>hz deploy --db-servers=10 --app-servers=20</code></pre>
                  <a class="button outlined dark" href="/docs/sharding-and-replication/">Learn more <i class="right-arrow">go</i></a>
             </section>
             <div class="rethinkdb-ui">
@@ -156,5 +148,7 @@ body_class: landing
         </div>
     </section>
 </div>
-<script src="/assets/js/d3.min.js" charset="utf-8"></script>
-<script src="/assets/js/landing.js" /></script>
+<link rel="stylesheet" media="screen" href="/assets/css/terminal.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+<script src="/assets/js/terminal.js" /></script>

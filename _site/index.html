@@ -1,269 +1,287 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Horizon</title>
         <meta charset="utf-8">
-        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" media="screen" href="/assets/css/styles.css"/>
-        <link rel="stylesheet" media="screen" href="/assets/css/jekyll-github.css"/>
-        <link rel="stylesheet" media="screen" href="/assets/css/horizon.css"/>
-        <link rel="icon" type="image/png" href="/favicon.png">
+        <title>Horizon: the realtime, open-source JavaScript backend</title>
 
-        <!-- typekit -->
-        <script type="text/javascript" src="//use.typekit.net/lmb6cah.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <link rel="stylesheet" href="/css/main.css">
+
+        <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+        <script src="https://use.typekit.net/gbh0vju.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/site.js"></script>
     </head>
-    <body class="landing">
-        <div id="wrapper">
-            
-<!-- site nav -->
-<nav class="mobile-menu push-menu-right">
-    <ul>
-        <li class="menu-trigger"><a href="/">Close</a></li>
-        <li><a href="/faq">FAQ</a></li>
-        <li><a href="/docs">Docs</a></li>
-        <li><a href="/api">API</a></li>
-        <li><a href="/community">Community</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/blog">Blog</a></li>
-    </ul>
-    
-</nav>
-<nav class="site-nav">
+
+    <body>
+        <nav class="site-nav">
     <div class="site-container">
-        <a class="logo" href="/">Horizon</a>
-        <ul>
-            <li class="menu-trigger"><a href="/"><img class="menu-trigger-icon" src="/assets/images/icons/icon-menu-white.png"></a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/docs">Docs</a></li>
-            <li><a href="/api">API</a></li>
-            <li><a href="/community">Community</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/blog">Blog</a></li>
+        <h1 class="logo">Horizon</h1>
+        <ul class="navbar-links">
+            <li>Horizon Cloud</li>
+            <li>Install</li>
+            <li>Docs</li>
+            <li>Community</li>
         </ul>
     </div>
 </nav>
-
-            <div class="landing">
-    <div class="hero-wrapper">
-        <!-- hero -->
-        <section class="hero">
-            <div class="site-container">
-                <h1>The realtime JavaScript platform <span>Build powerful web and mobile apps that scale.</span></h1>
-                <div class="hero-install">
-                    <a class="button install light" href="/install">Install Horizon <i class="right-arrow white">&rarr;</i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- hero-notes -->
-        <section class="hero-notes">
-            <div class="site-container">
-                <div class="social-wrapper">
-                    <p class="headline"><span class="headline-latest-release">Latest release:</span> <a href="">RethinkDB  ()</a></p>
-                    <p class="github"><a href="https://github.com/rethinkdb/rethinkdb"><i class="icon-github-landing"></i> stars on GitHub</a></p>
-                    <p class="twitter"><a href="https://twitter.com/rethinkdb"><i class="icon-twitter-landing"></i>@rethinkdb on Twitter</a></p>
-                </div>
-            </div>
-        </section>
+<section class="hero">
+    <div class="hero-left"></div>
+    <div class="hero-center site-container">
+        <h1>The realtime JavaScript backend</h1>
+        <h2>Build powerful web and mobile apps that scale.</h2>
+        <a class="button primary-button" href="/install">Install Horizon <i class="right-arrow white">&rarr;</i></a>
     </div>
+    <div class="hero-right"></div>
+</section>
 
-    <!-- intro -->
-    <section class="intro">
-        <div class="site-container">
-            <div class="intro-content">
-                <h1>Horizon is a complete, open-source <strong>realtime backend</strong> for JavaScript apps.</h1>
-                <p>
-                    Horizon is a standalone server (and a collection of Node.js
-                    modules) with a simple JavaScript API to quickly build your
-                    app, then scale it to millions of users.
-                </p>
-                <p>
-                    Built by the <a href="https://rethinkdb.com">RethinkDB</a>
-                    team and the open-source community, Horizon lets you build
-                    your apps with lightning speed.
-                </p>
-                <a class="button outlined dark" href="/faq">What is Horizon?<i class="right-arrow">go</i></a>
-            </div>
-            <div class="terminal-window">
-                <header>
-                    <!--<div class="button green"></div>
-                    <div class="button yellow"></div>
-                    <div class="button red"></div>-->
-                </header>
+<!-- intro -->
+<section class="intro">
+    <div class="site-container">
+        <section class="intro-content">
+            <h1>Horizon is a realtime, <strong> open-source backend</strong> for JavaScript apps.</h1>
+            <p>
+                Horizon is a standalone server (and a collection of Node.js
+                modules) with a simple JavaScript API to quickly build your
+                app, then scale it to millions of users.
+            </p>
+            <p>
+                Built by the <a href="https://rethinkdb.com">RethinkDB</a>
+                team and an open-source community, Horizon lets you build
+                your apps with lightning speed.
+            </p>
+        </section>
+        <section class="hz-terminal">
+            <img src="/images/landing/realtime-devices.png">
+            <!--<div class="terminal-window">
+                <header></header>
                 <section class="terminal">
                     <div class="history"></div>
                     $&nbsp;<span class="prompt"></span>
                     <span class="typed-cursor"></span>
-
                 </section>
-            </div>
-        </div>
-    </section>
+            </div>-->
+        </section>
+    </div>
+</section>
 
-    <!-- features -->
-    <div class="feature modern-stacks">
-        <div class="site-container">
-            <h1>What does Horizon include?</h1>
-            <section class="feature-content">
-                <article>
-                    <h2>Scalable, realtime database</h2>
-                    <p>
-                        Horizon is built on <a
-                        href="https://rethinkdb.com">RethinkDB</a>, a massively
-                        scalable, open-source database that streams realtime
-                        updates, and scales linearly to millions of operations
-                        per second. Horizon stores JSON data, and pushes
-                        data and query results to clients in realtime.
-                    </p>
-                    <img src="/assets/images/landing/features/1.png">
-                </article>
-                <article>
-                    <h2>Authentication</h2>
-                    <p>
-                        Authenticate users through Facebook, Twitter, Google,
-                        GitHub, and other services, and manage user accounts,
-                        sessions, and permissions through convenient APIs.
-                    </p>
-                    <img src="/assets/images/landing/features/2.png">
-                </article>
-                <article>
-                    <h2>Modular and extensible</h2>
-                    <p>
-                        Horizon is distributed as a standalone server for
-                        browser-based JavaScript apps. When you're ready to
-                        write custom backend code, use the Horizon modules in
-                        Node.js to smoothly transition. RethinkDB is bundled
-                        with Horizon, so you can make direct database queries on
-                        the backend using the powerful query language ReQL, for
-                        flexible joins, aggregations, binary file support, and
-                        rich querying.
-                    </p>
-                    <img src="/assets/images/landing/features/3.png">
-                </article>
-                <article>
-                    <h2>Built with love by the open source community</h2>
-                    <p>
-                        Developed by a core team of database experts
-                        and over 100 contributors from around the
-                        world, Horizon is shaped by developers like
-                        you participating in <a href="/community">an
-                        open development process</a>.
-                    </p>
-                    <img src="/assets/images/landing/features/4.png">
-                </article>
-            </section>
+<section class="screencast">
+    <div class="site-container">
+        <h1>Rapidly <strong>prototype, build, and deploy</strong> JavaScript apps with Horizon.</h1>
+    </div>
+    <div class="screencast-container site-container">
+        <section class="screencast-description">
+            <h2>Realtime fabric for your JavaScript app</h2>
+            <p>
+                Horizon's backend packs a realtime database, useful APIs and
+                services, and makes it easy to use modern JavaScript tools like
+                React, Angular, React Native, Cycle, and other popular
+                frameworks.
+            </p>
+            <a class="button primary-button" href="https://www.youtube.com/watch?v=Sb1lH5mvYmU">Watch the screencast<i class="right-arrow">&rarr;</i></a>
+        </section>
+        <section class="hz-screenshot-container">
+            <div class="hz-screenshot"><div class="play-button"></div></div>
+        </section>
+        <!--<iframe width="960" height="540" src="https://www.youtube.com/embed/Sb1lH5mvYmU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>-->
+    </div>
+</section>
+
+<!-- features -->
+<section class="features">
+    <div class="site-container">
+        <section class="feature-content">
+            <article>
+                <h1>Scalable, realtime database</h1>
+                <p>
+                    Horizon is built on <a
+                    href="https://rethinkdb.com">RethinkDB</a>, a massively
+                    scalable, open-source database that streams realtime
+                    updates, and scales linearly to millions of operations
+                    per second. Horizon stores JSON data, and pushes
+                    data and query results to clients in realtime.
+                </p>
+            </article>
+            <article>
+                <h1>Authentication</h1>
+                <p>
+                    Authenticate users through Facebook, Twitter, Google,
+                    GitHub, and other services, and manage user accounts,
+                    sessions, and permissions through convenient APIs.
+                </p>
+            </article>
+        </section>
+        <section class="feature-content">
+            <article>
+                <h1>Modular and extensible</h1>
+                <p>
+                    Horizon is distributed as a standalone server for
+                    browser-based JavaScript apps. When you're ready to
+                    write custom backend code, use the Horizon modules in
+                    Node.js to smoothly transition. RethinkDB is bundled
+                    with Horizon, so you can make direct database queries on
+                    the backend using the powerful query language ReQL, for
+                    flexible joins, aggregations, binary file support, and
+                    rich querying.
+                </p>
+            </article>
+            <article>
+                <h1>Built with love by the open source community</h1>
+                <p>
+                    Developed by a core team of database experts
+                    and over 100 contributors from around the
+                    world, Horizon is shaped by developers like
+                    you participating in <a href="/community">an
+                    open development process</a>.
+                </p>
+            </article>
+        </section>
+    </div>
+</section>
+<section class="get-started">
+    <div class="site-container">
+        <h1>Build your first Horizon app with the ten-minute guide.</h1>
+        <div class="get-started-action">
+            <a class="button primary-button">Get started</a>
         </div>
     </div>
-    <div class="feature">
-        <div class="site-container">
-            <section class="feature-content feature-content-two">
-                <h1>Scale your app in seconds</h1>
-                <p>
-                    When you're ready to deploy your app to production, run it
-                    on the Horizon Cloud, or deploy on your own servers.
-                </p>
-                <p>
-                    Deploy your app to Horizon Cloud with a simple web UI, or
-                    powerful command-line tools:
-                </p>
-                <pre><code>hz deploy</code></pre>
-                <p>
-                    Scale it to millions of users:
-                </p>
-                <pre><code>hz deploy --db-servers=10 --app-servers=20</code></pre>
-                 <a class="button outlined dark" href="/docs/sharding-and-replication/">Learn more <i class="right-arrow">go</i></a>
-            </section>
-            <div class="rethinkdb-ui">
-                <img src="/assets/images/landing/rethinkdb-ui_@2x.png">
-                <div class="ui-graph-wrapper"><div class="ui-graph"></div></div>
-            </div>
-        </div>
-    </div>
+</section>
+<footer>
+    <div class="site-container">
+        <h1>Built by the <a href="https://rethinkdb.com">RethinkDB</a> team.</h1>
 
-    <!-- getting started -->
-    <section class="get-started callout">
-        <div class="site-container">
-            <h1>Install in seconds on Linux or OS X</h1>
-            <a class="button install light" href="/install">Install RethinkDB <i class="right-arrow white">go</i></a>
-            <a class="button learn-more outlined dark" href="/faq">Learn more <i class="right-arrow">go</i></a>
-        </div>
-    </section>
-</div>
-<link rel="stylesheet" media="screen" href="/assets/css/terminal.css"/>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    </div>
+</footer>
+
+
 <script type="text/javascript" src="http://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
-<script src="/assets/js/terminal.js" /></script>
-
-
-            <!-- site footer -->
-            <footer class="site-footer">
-                <div class="site-container">
-                    <section class="get-started">
-                        <h1>Join  developers</h1>
-                        <p>Install in seconds on Linux or OS X.</p>
-                        <a class="button small install" href="/install">Install</a>
-                        <a class="button small outlined learn-more" href="/faq">Learn more</a>
-
-                        <hr>
-                        <section class="contact-info">
-                            <address>
-                                156 E Dana St,<br>
-                                Mountain View, CA 94041
-                            </address>
-                            <p class="irc">#rethinkdb on freenode</p>
-                        </section>
-                    </section>
-                    <ul class="footer-links">
-                        <li>
-                            <header>
-                                <span>Getting started</span>
-                            </header>
-                            <ul>
-                                <li><a href="/faq">FAQ</a></li>
-                                <li><a href="/install">Install</a></li>
-                                <li><a href="/docs/quickstart">Quickstart</a></li>
-                                <li><a href="/docs/guide">Tutorial</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <header>
-                                <span>Documentation</span>
-                            </header>
-                            <ul>
-                                <li><a href="/api">API</a></li>
-                                <li><a href="/docs/introduction-to-reql/">Intro to ReQL</a></li>
-                                <li><a href="/docs/cookbook">Cookbook</a></li>
-                                <li><a href="/docs/architecture">Architecture</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <header>
-                                <span>Community</span>
-                            </header>
-                            <ul>
-                                <li><a href="/community">Events</a></li>
-                                <li><a href="/community/shirts-for-stories/">Shirts for Stories</a></li>
-                                <li><a href="https://github.com/rethinkdb/rethinkdb">GitHub</a></li>
-                                <li><a href="https://twitter.com/rethinkdb">Twitter</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <header>
-                                <span>RethinkDB</span>
-                            </header>
-                            <ul>
-                                <li><a href="/about/">Company</a></li>
-                                <li><a href="/services/">Services</a></li>
-                                <li><a href="/blog/">Blog</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p class="github-footer"><i class="icon-github-footer"></i><a href="https://github.com/rethinkdb/rethinkdb">Star this project</a> on GitHub.</p>
-                </div>
-            </footer>
+<script src="/js/terminal.js" /></script>
+<!--<div class="feature modern-stacks">
+    <div class="site-container">
+        <h1>What does Horizon include?</h1>
+        <section class="feature-content">
+            <article>
+                <h2>Scalable, realtime database</h2>
+                <p>
+                    Horizon is built on <a
+                    href="https://rethinkdb.com">RethinkDB</a>, a massively
+                    scalable, open-source database that streams realtime
+                    updates, and scales linearly to millions of operations
+                    per second. Horizon stores JSON data, and pushes
+                    data and query results to clients in realtime.
+                </p>
+                <img src="/assets/images/landing/features/1.png">
+            </article>
+            <article>
+                <h2>Authentication</h2>
+                <p>
+                    Authenticate users through Facebook, Twitter, Google,
+                    GitHub, and other services, and manage user accounts,
+                    sessions, and permissions through convenient APIs.
+                </p>
+                <img src="/assets/images/landing/features/2.png">
+            </article>
+            <article>
+                <h2>Modular and extensible</h2>
+                <p>
+                    Horizon is distributed as a standalone server for
+                    browser-based JavaScript apps. When you're ready to
+                    write custom backend code, use the Horizon modules in
+                    Node.js to smoothly transition. RethinkDB is bundled
+                    with Horizon, so you can make direct database queries on
+                    the backend using the powerful query language ReQL, for
+                    flexible joins, aggregations, binary file support, and
+                    rich querying.
+                </p>
+                <img src="/assets/images/landing/features/3.png">
+            </article>
+            <article>
+                <h2>Built with love by the open source community</h2>
+                <p>
+                    Developed by a core team of database experts
+                    and over 100 contributors from around the
+                    world, Horizon is shaped by developers like
+                    you participating in <a href="/community">an
+                    open development process</a>.
+                </p>
+                <img src="/assets/images/landing/features/4.png">
+            </article>
+        </section>
+    </div>
+</div>
+<div class="feature">
+    <div class="site-container">
+        <section class="feature-content feature-content-two">
+            <h1>Scale your app in seconds</h1>
+            <p>
+                When you're ready to deploy your app to production, run it
+                on the Horizon Cloud, or deploy on your own servers.
+            </p>
+            <p>
+                Deploy your app to Horizon Cloud with a simple web UI, or
+                powerful command-line tools:
+            </p>
+            <pre><code>hz deploy</code></pre>
+            <p>
+                Scale it to millions of users:
+            </p>
+            <pre><code>hz deploy --db-servers=10 --app-servers=20</code></pre>
+             <a class="button outlined dark" href="/docs/sharding-and-replication/">Learn more <i class="right-arrow">go</i></a>
+        </section>
+        <div class="rethinkdb-ui">
+            <img src="/assets/images/landing/rethinkdb-ui_@2x.png">
+            <div class="ui-graph-wrapper"><div class="ui-graph"></div></div>
         </div>
+    </div>
+</div>-->
+<!-- <section class="hero">
+    <section class="description">
+        <p>
+            Horizon is a <strong>realtime open-source backend for JavaScript apps</strong>, built
+            by the <a href="https://rethinkdb.com">RethinkDB</a> team (and an amazing community).
+        </p>
+        <p>
+            Horizon includes APIs and tools that make it easy to quickly prototype your web
+            and mobile app, and then scale it to millions of users.
+        </p>
+    </section>
+    <section class="why-horizon">
+    <img class="hz-video" src="/images/horizon-video.png" />
+    <div class="play-button" src="/images/play-button.png" />
+</section>
+
+</section> -->
+
+        <!--<script type="text/javascript">
+          var _gauges = _gauges || [];
+          (function() {
+            var t   = document.createElement('script');
+            t.type  = 'text/javascript';
+            t.async = true;
+            t.id    = 'gauges-tracker';
+            t.setAttribute('data-site-id', '56fb1a594b2ffa61f100a699');
+            t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+            t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(t, s);
+          })();
+        </script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-9922584-3', 'auto');
+          ga('send', 'pageview');
+
+      </script>-->
     </body>
 </html>

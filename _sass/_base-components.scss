@@ -1,0 +1,16 @@
+.site-container {
+    @include outer-container;
+    padding: 0 20px;
+}
+
+a.button {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px 35px;
+
+    &.primary-button {
+        background: rgb(238,122,117);
+        color: white;
+    }
+}

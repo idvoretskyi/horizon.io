@@ -1,0 +1,38 @@
+nav.site-nav {
+    .site-container { display: flex; }
+    margin-top: 20px;
+
+    h1.logo {
+        $size: 3rem;
+        font-family: "museo-sans", sans-serif;
+        font-size: $size;
+        font-weight: 300;
+        line-height: normal;
+        text-transform: lowercase;
+        background: url('/images/horizon-mark.png');
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: $size * 0.9;
+        padding-left: $size*1.2;
+        margin: 0;
+        margin-right: $size*0.2;
+    }
+    ul {
+        display: flex;
+        flex-grow: 1;
+        list-style-type: none;
+        margin: 0;
+        justify-content: flex-end;
+        li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-right: 40px;
+            color: $slate-grey-blue;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}

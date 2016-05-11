@@ -4,6 +4,7 @@
     padding-top: 80px;
     position: relative;
     display: flex;
+    text-align: center;
 
     .hero-left, .hero-right, .hero-center {
         background-position: bottom;
@@ -30,22 +31,17 @@
         }
     }
 
-    // temporary while working on the hero image
-    //background-size: 100% 60%;
-    text-align: center;
-
     h1 {
-        font-family: "museo sans rounded";
-        font-size: 3rem;
-        font-weight: 400;
+        font-size: 3.1rem;
+        font-weight: 500;
     }
     h2 {
         font-size: 2rem;
+        font-weight: 300;
         line-height: 2.5rem;
     }
     .button {
         margin-top: 30px;
-        border-radius: 7px;
     }
 }
 
@@ -55,64 +51,31 @@
     background-size: 100% 101%;
     padding-top: 65px;
     padding-bottom: 60px;
+    .site-container {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: top;
+    }
 
     .intro-content {
-        @include span-columns(6);
-
+        flex-basis: 700px;
         h1 {
-            font-size: 2rem;
+            font-size: 2.1rem;
             margin-bottom: 2rem;
         }
         p {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 200;
             margin-bottom: 1.5rem;
+            line-height: 2.6rem;
         }
     }
-    .hz-terminal {
-        @include span-columns(6);
-        position: relative;
-    }
-}
-
-.features {
-    padding: 60px 0;
-
-    article {
-        margin-bottom: 3rem;
-        &:last-child { margin-bottom: 0; }
-    }
-    h1 {
-        font-size: 1.4rem;
-        font-weight: 600;
-    }
-
-    p {
-        font-size: 1.3rem;
-    }
-
-    .feature-content {
-        @include span-columns(6);
-    }
-    .why-horizon {
-        @include span-columns(6);
-        position: relative;
-        background: rgb(27, 27, 31);
-        .play-button {
-            position: absolute;
-            top: 0;
-            background: url('/images/play-button.png');
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-            width: 100%;
-            height: 100%;
-            background-size: 100px;
-            cursor: pointer;
-            @include transition(opacity 0.2s linear);
-            &:hover {
-                opacity: 1;
-            }
-        }
+    .hz-animation {
+        flex-grow: 1;
+        padding-left: 100px;
+        padding-top: 40px;
+        svg { width: 140%; }
+        svg .testing-canvas { fill: none; }
     }
 }
 
@@ -160,36 +123,28 @@
 .screencast {
     color: white;
     background: $bright-teal;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.1); // text shadow for readability, white text
-    padding-top: 75px;
+    background-image: url('/images/landing/map-pattern.png');
+    padding: 60px 0;
 
     h1 {
-        line-height: 1rem;
-        font-size: 2.4rem;
-        strong { font-weight: 600; }
+        font-size: 2.3rem;
+        margin-bottom: 2.3rem;
     }
-    .screencast-container {
-        margin-top: 60px;
-        display: flex;
+    h2 {
+        font-weight: 500;
+        font-size: 1.8rem;
+        margin-bottom: 2.3rem;
     }
-    .screencast-description {
-        flex-basis: 440px;
-        h2 {
-            font-weight: 500;
-            font-size: 1.6rem;
-            line-height: 1rem;
-            margin-bottom: 2.5rem;
-        }
-        p {
-            font-size: 1.3rem;
-            line-height: 2rem;
-        }
-        .button {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
+    p {
+        font-size: 1.5rem;
+        line-height: 2.4rem;
     }
+    .button {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .screencast-container { display: flex; }
+    .screencast-description { flex-basis: 510px; }
     .hz-screenshot-container {
         flex-grow: 1;
         padding-left: 80px;
@@ -224,8 +179,51 @@
 
 }
 
+.features {
+    padding: 60px 0;
+
+    article {
+        margin-bottom: 3rem;
+        &:last-child { margin-bottom: 0; }
+    }
+    h1 {
+        font-size: 1.7em;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+    }
+
+    .feature-content {
+        @include span-columns(6);
+    }
+    .why-horizon {
+        @include span-columns(6);
+        position: relative;
+        background: rgb(27, 27, 31);
+        .play-button {
+            position: absolute;
+            top: 0;
+            background: url('/images/play-button.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            background-size: 100px;
+            cursor: pointer;
+            @include transition(opacity 0.2s linear);
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
 .get-started {
-    padding: 10px 0;
+    padding: 15px 0;
     background: $dusty-purple-grey;
     .site-container {
         display: flex;
@@ -239,12 +237,43 @@
         flex-grow: 1;
     }
 
-    .button {
-        padding: 8px 35px;
-        font-size: 1.4rem;
-    }
+    .button { padding: 8px 35px; }
 }
 
+footer {
+    background: $deep-blue;
+    color: white;
+    padding: 60px 0;
+
+    .site-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+    p { font-size: 1.2rem; }
+
+    section.about {
+        flex-basis: 500px;
+        padding-right: 50px;
+    }
+    nav {
+        flex-grow: 1;
+        margin: 0 30px;
+        h1 {
+            text-transform: lowercase;
+            border-bottom: thin solid lighten($deep-blue, 10);
+            padding-bottom: 0.5rem;
+        }
+        ul { margin: 0; }
+        li {
+            list-style-type: none;
+            font-size: 1.2rem;
+        }
+    }
+}
 // .coming-soon {
 //     z-index: 0;
 //     padding: 30px 60px;

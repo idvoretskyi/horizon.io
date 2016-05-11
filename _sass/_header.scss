@@ -1,6 +1,10 @@
 nav.site-nav {
     .site-container { display: flex; }
     margin-top: 20px;
+    a {
+        text-decoration: none;
+        color: $slate-grey-blue;
+    }
 
     h1.logo {
         $size: 3rem;

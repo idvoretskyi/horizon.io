@@ -38,8 +38,8 @@ layout: default
                 your apps with lightning speed.
             </p>
         </section>
-        <section class="hz-terminal">
-            <img src="/images/landing/realtime-devices.png">
+        <section class="hz-animation">
+            {% include hz-animation.html %}
             <!--<div class="terminal-window">
                 <header></header>
                 <section class="terminal">
@@ -55,22 +55,22 @@ layout: default
 <section class="screencast">
     <div class="site-container">
         <h1>Rapidly <strong>prototype, build, and deploy</strong> JavaScript apps with Horizon.</h1>
-    </div>
-    <div class="screencast-container site-container">
-        <section class="screencast-description">
-            <h2>Realtime fabric for your JavaScript app</h2>
-            <p>
-                Horizon's backend packs a realtime database, useful APIs and
-                services, and makes it easy to use modern JavaScript tools like
-                React, Angular, React Native, Cycle, and other popular
-                frameworks.
-            </p>
-            <a class="button primary-button" href="https://www.youtube.com/watch?v=Sb1lH5mvYmU">Watch the screencast<i class="right-arrow">&rarr;</i></a>
-        </section>
-        <section class="hz-screenshot-container">
-            <div class="hz-screenshot"><div class="play-button"></div></div>
-        </section>
-        <!--<iframe width="960" height="540" src="https://www.youtube.com/embed/Sb1lH5mvYmU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>-->
+        <div class="screencast-container">
+            <section class="screencast-description">
+                <h2>Realtime fabric for your JavaScript app</h2>
+                <p>
+                    Horizon's backend packs a realtime database, useful APIs and
+                    services, and makes it easy to use modern JavaScript tools like
+                    React, Angular, React Native, Cycle, and other popular
+                    frameworks.
+                </p>
+                <a class="button primary-button" href="https://www.youtube.com/watch?v=Sb1lH5mvYmU">Watch the screencast<i class="right-arrow">&rarr;</i></a>
+            </section>
+            <section class="hz-screenshot-container">
+                <div class="hz-screenshot"><div class="play-button"></div></div>
+            </section>
+            <!--<iframe width="960" height="540" src="https://www.youtube.com/embed/Sb1lH5mvYmU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>-->
+        </div>
     </div>
 </section>
 
@@ -135,11 +135,38 @@ layout: default
 </section>
 <footer>
     <div class="site-container">
-        <h1>Built by the <a href="https://rethinkdb.com">RethinkDB</a> team.</h1>
-
+        <section class="about">
+            <h1>Horizon is a realtime, open-source backend for JavaScript apps.</h1>
+            <p>Build your app, and scale it to millions of users.</p>
+            <a class="button primary-button">Install Horizon</a>
+            <h2>Built by the <a href="https://rethinkdb.com">RethinkDB</a> team.</h2>
+        </section>
+        <nav>
+            <h1>Getting started</h1>
+            <ul>
+                <li>FAQ</li>
+                <li>Install</li>
+                <li>Ten-minute guide</li>
+            </ul>
+        </nav>
+        <nav>
+            <h1>Documentation</h1>
+            <ul>
+                <li>API</li>
+                <li>Horizon client</li>
+                <li>CLI</li>
+            </ul>
+        </nav>
+        <nav>
+            <h1>Getting started</h1>
+            <ul>
+                <li>FAQ</li>
+                <li>Install</li>
+                <li>Ten-minute guide</li>
+            </ul>
+        </nav>
     </div>
 </footer>
-
 
 <script type="text/javascript" src="http://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
 <script src="/js/terminal.js" /></script>
@@ -234,3 +261,7 @@ layout: default
     </section>
     {% include hz-talk.html %}
 </section> -->
+<link href="/css/hz-animation.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenMax.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/AnticipateEase.min.js"></script>
+<script src="/js/hz-animation.js"></script>

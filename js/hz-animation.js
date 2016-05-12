@@ -95,10 +95,10 @@ TweenMax.set(logoSun, {
     }
   })
 TweenMax.set('#allDevices', {
-    scale:1.3,
+    scale:1.32,
   //x:-120,
   //y:-150,
-  svgOrigin:'-10 560'
+  svgOrigin:'-10 250'
   })
 
 //DEVICE SPECIFIC ANIMATION vv

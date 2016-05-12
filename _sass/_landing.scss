@@ -32,11 +32,11 @@
     }
 
     h1 {
-        font-size: 3.1rem;
+        font-size: 2.5rem;
         font-weight: 500;
     }
     h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 300;
         line-height: 2.5rem;
     }
@@ -49,8 +49,8 @@
     background-position: right -4px;
     background-repeat: no-repeat;
     background-size: 100% 101%;
-    padding-top: 65px;
-    padding-bottom: 60px;
+    padding: 55px 0;
+
     .site-container {
         display: flex;
         flex-wrap: nowrap;
@@ -58,23 +58,22 @@
     }
 
     .intro-content {
-        flex-basis: 700px;
+        flex-basis: 620px;
         h1 {
-            font-size: 2.1rem;
+            font-size: 1.7rem;
             margin-bottom: 2rem;
         }
         p {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: 200;
             margin-bottom: 1.5rem;
-            line-height: 2.6rem;
+            line-height: 2.4rem;
         }
     }
     .hz-animation {
         flex-grow: 1;
-        padding-left: 100px;
-        padding-top: 40px;
-        svg { width: 140%; }
+        margin-top: -30px;
+        padding-left: 70px;
         svg .testing-canvas { fill: none; }
     }
 }
@@ -124,20 +123,21 @@
     color: white;
     background: $bright-teal;
     background-image: url('/images/landing/map-pattern.png');
-    padding: 60px 0;
+    padding: 55px 0;
 
+    h1, h2, p { text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1) }
     h1 {
-        font-size: 2.3rem;
-        margin-bottom: 2.3rem;
+        font-size: 2.2rem;
+        margin-bottom: 2.2rem;
     }
     h2 {
         font-weight: 500;
-        font-size: 1.8rem;
-        margin-bottom: 2.3rem;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
     }
     p {
-        font-size: 1.5rem;
-        line-height: 2.4rem;
+        font-size: 1.3rem;
+        line-height: 2.2rem;
     }
     .button {
         margin-top: 1.5rem;
@@ -150,7 +150,7 @@
         padding-left: 80px;
     }
     .hz-screenshot {
-        height: 350px;
+        height: 300px;
         background-image: url('/images/landing/hz-screenshot.png');
         background-size: 100% auto;
         background-position: top right;
@@ -180,50 +180,38 @@
 }
 
 .features {
-    padding: 60px 0;
+    padding: 85px 0;
 
     article {
-        margin-bottom: 3rem;
+        $_size: 175px;
+        margin-bottom: 4.8rem;
+        padding-left: $_size + 100px;
+        background-repeat: no-repeat;
+        background-size: auto $_size;
+        min-height: $_size;
+
+        &.rethinkdb { background-image: url('/images/landing/icons/bridge.png') }
+        &.auth { background-image: url('/images/landing/icons/auth.png') }
+        &.modules { background-image: url('/images/landing/icons/modules.png') }
+        &.open-source { background-image: url('/images/landing/icons/built-love.png') }
+
+        .feature-body { margin-left: 50px; }
         &:last-child { margin-bottom: 0; }
     }
+
     h1 {
-        font-size: 1.7em;
+        font-size: 1.4rem;
         font-weight: 500;
     }
 
     p {
-        font-size: 1.4rem;
-        line-height: 2.4rem;
-    }
-
-    .feature-content {
-        @include span-columns(6);
-    }
-    .why-horizon {
-        @include span-columns(6);
-        position: relative;
-        background: rgb(27, 27, 31);
-        .play-button {
-            position: absolute;
-            top: 0;
-            background: url('/images/play-button.png');
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-            width: 100%;
-            height: 100%;
-            background-size: 100px;
-            cursor: pointer;
-            @include transition(opacity 0.2s linear);
-            &:hover {
-                opacity: 1;
-            }
-        }
+        font-size: 1.2rem;
+        line-height: 2.3rem;
     }
 }
 
 .get-started {
-    padding: 15px 0;
+    padding: 13px 0;
     background: $dusty-purple-grey;
     .site-container {
         display: flex;
@@ -231,7 +219,7 @@
         align-items: center;
     }
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 4rem;
         margin: 0;
         flex-grow: 1;

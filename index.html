@@ -1,17 +1,6 @@
 ---
 layout: default
 ---
-<nav class="site-nav">
-    <div class="site-container">
-        <h1 class="logo">Horizon</h1>
-        <ul class="navbar-links">
-            <li>Horizon Cloud</li>
-            <li>Install</li>
-            <li>Docs</li>
-            <li>Community</li>
-        </ul>
-    </div>
-</nav>
 <section class="hero">
     <div class="hero-left"></div>
     <div class="hero-center site-container">
@@ -77,52 +66,48 @@ layout: default
 <!-- features -->
 <section class="features">
     <div class="site-container">
-        <section class="feature-content">
-            <article>
-                <h1>Scalable, realtime database</h1>
-                <p>
-                    Horizon is built on <a
-                    href="https://rethinkdb.com">RethinkDB</a>, a massively
-                    scalable, open-source database that streams realtime
-                    updates, and scales linearly to millions of operations
-                    per second. Horizon stores JSON data, and pushes
-                    data and query results to clients in realtime.
-                </p>
-            </article>
-            <article>
-                <h1>Authentication</h1>
-                <p>
-                    Authenticate users through Facebook, Twitter, Google,
-                    GitHub, and other services, and manage user accounts,
-                    sessions, and permissions through convenient APIs.
-                </p>
-            </article>
-        </section>
-        <section class="feature-content">
-            <article>
-                <h1>Modular and extensible</h1>
-                <p>
-                    Horizon is distributed as a standalone server for
-                    browser-based JavaScript apps. When you're ready to
-                    write custom backend code, use the Horizon modules in
-                    Node.js to smoothly transition. RethinkDB is bundled
-                    with Horizon, so you can make direct database queries on
-                    the backend using the powerful query language ReQL, for
-                    flexible joins, aggregations, binary file support, and
-                    rich querying.
-                </p>
-            </article>
-            <article>
-                <h1>Built with love by the open source community</h1>
-                <p>
-                    Developed by a core team of database experts
-                    and over 100 contributors from around the
-                    world, Horizon is shaped by developers like
-                    you participating in <a href="/community">an
-                    open development process</a>.
-                </p>
-            </article>
-        </section>
+        <article class="rethinkdb">
+            <h1>Scalable, realtime database</h1>
+            <p>
+                Horizon is built on <a
+                href="https://rethinkdb.com">RethinkDB</a>, a massively
+                scalable, open-source database that streams realtime
+                updates, and scales linearly to millions of operations
+                per second. Horizon stores JSON data, and pushes
+                data and query results to clients in realtime.
+            </p>
+        </article>
+        <article class="auth">
+            <h1>Authentication</h1>
+            <p>
+                Authenticate users through Facebook, Twitter, Google,
+                GitHub, and other services, and manage user accounts,
+                sessions, and permissions through convenient APIs.
+            </p>
+        </article>
+        <article class="modules">
+            <h1>Modular and extensible</h1>
+            <p>
+                Horizon is distributed as a standalone server for
+                browser-based JavaScript apps. When you're ready to
+                write custom backend code, use the Horizon modules in
+                Node.js to smoothly transition. RethinkDB is bundled
+                with Horizon, so you can make direct database queries on
+                the backend using the powerful query language ReQL, for
+                flexible joins, aggregations, binary file support, and
+                rich querying.
+            </p>
+        </article>
+        <article class="open-source">
+            <h1>Built with love by the open source community</h1>
+            <p>
+                Developed by a core team of database experts
+                and over 100 contributors from around the
+                world, Horizon is shaped by developers like
+                you participating in <a href="/community">an
+                open development process</a>.
+            </p>
+        </article>
     </div>
 </section>
 <section class="get-started">

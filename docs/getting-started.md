@@ -7,6 +7,7 @@ title: Getting started with Horizon
 # Getting Started with Horizon
 
 **Getting Started**
+
 * [Installation](#installation)
 * [Creating your first app](#creating-your-first-app)
 * [Starting Horizon Server](#starting-horizon-server)

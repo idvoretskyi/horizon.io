@@ -316,5 +316,5 @@ tl.staggerFrom([smallGroup, medGroup, bigGroup], 0.6, {
     ease: Power2.easeIn
   })
 
-tl.timeScale(0.6)
+tl.timeScale(0.4)
 tl.play(0)

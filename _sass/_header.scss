@@ -1,10 +1,13 @@
 nav.site-nav {
     .site-container { display: flex; }
 
+    $_logo-height: 50px;
+    $_padding-bottom: 30px;
     border-bottom: thin solid lighten(black, 90);
     margin-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: $_padding-bottom;
     margin-bottom: 50px;
+    min-height: $_logo-height + $_padding-bottom;
 
     &.simple {
         padding-bottom: 0;
@@ -19,7 +22,7 @@ nav.site-nav {
     }
 
     a.logo img {
-        height: 50px;
+        height: $_logo-height;
         flex-shrink: 0;
     }
 

@@ -21,7 +21,7 @@
     </head>
 
     <body>
-        <nav class="site-nav">
+        <nav class="site-nav{% if page.type == 'landing' %} simple{% endif %}">
             <div class="site-container">
                 <a class="logo" href="/"><img src="/images/horizon-logo.png" alt="Horizon"></a>
                 <ul class="navbar-links">

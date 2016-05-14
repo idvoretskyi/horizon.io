@@ -5,6 +5,13 @@ nav.site-nav {
     margin-top: 20px;
     padding-bottom: 30px;
     margin-bottom: 50px;
+
+    &.simple {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
     a {
         text-decoration: none;
         color: $slate-grey-blue;

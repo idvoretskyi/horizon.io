@@ -23,6 +23,10 @@ section.documentation {
             padding-left: 1rem;
 
             li a { display: block; }
+            li.active a {
+                color: black;
+                text-decoration: none;
+            }
         }
     }
     section.docs-article {

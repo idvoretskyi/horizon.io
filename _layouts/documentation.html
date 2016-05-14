@@ -9,7 +9,9 @@ layout: default
                 <h1>{{ each.section.name }}</h1>
                 <ul>
                     {% for doc in each.section.docs %}
-                        <li><a href="{{ doc.url }}"{% if page.id == doc.id %} class="active"{% endif %}>{{ doc.name }}</a></li>
+                        <li{% if page.id == doc.id %} class="active"{% endif %}>
+                            <a href="{{ doc.url }}">{{ doc.name }}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </section>

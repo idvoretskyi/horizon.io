@@ -1,5 +1,5 @@
 - section:
-    name: Getting started
+    name: Horizon basics
     docs:
         - name: Install Horizon
           id: install

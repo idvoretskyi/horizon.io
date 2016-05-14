@@ -4,14 +4,21 @@
         - name: Install Horizon
           id: install
           url: /docs/install
+        - name: FAQ
+          id: faq
+          url: /faq
         - name: Getting started
           id: getting-started
           url: /docs/getting-started
 - section:
-    name: Integrations
+    name: Building Horizon apps
+    docs:
+        - name: Integrations
+          id: Integrations
+          url: /docs/integrations
+- section:
+    name: Resources
     docs:
         - name: Example apps
           id: example-apps
           url: /docs/example-apps
-- section:
-    name: Community

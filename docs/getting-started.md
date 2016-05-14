@@ -2,12 +2,10 @@
 layout: documentation
 title: Getting started with Horizon
 id: getting-started
+hero_image: /images/docs/getting-started.png
 ---
-![](/images/docs/getting-started.png)
-
-# Getting Started with Horizon
-
-**Getting Started**
+{::comment}
+## Getting Started
 
 * [Installation](#installation)
 * [Creating your first app](#creating-your-first-app)
@@ -26,13 +24,15 @@ id: getting-started
 
 
 
-**Examples**
+## Examples
+
 * [Example Horizon Applications](#example-applications)
 * [Extending Horizon Server examples](#extending-horizon-server)
 
 ---
+{:/comment}
 
-## Installation
+# Installation
 
 First, install horizon from npm:
 
@@ -40,7 +40,7 @@ First, install horizon from npm:
 $ npm install -g horizon
 ```
 
-## Creating your first app
+# Creating your first app
 
 Now you can initialize a new horizon project:
 
@@ -95,7 +95,7 @@ By default, horizon creates a basic `index.html` to serve so you can verify ever
 
 ---
 
-## Starting Horizon Server
+# Starting Horizon Server
 
 We now need to start Horizon Server. Running `hz serve` does three main things:
 
@@ -126,7 +126,7 @@ Here you can find
 
 On your local dev machine, you will usually use `hz serve --dev` which will begin a new instance of RethinkDB for you and will automatically create tables and indexes making your development workflow easy. In a production environment, you will want to just use `hz serve` and make use of the `.hz/config.toml` file.
 
-### Configuring Horizon Server
+## Configuring Horizon Server
 
 Horizon Server is configurable via the `.hz/config.toml` file which is in the [toml](https://github.com/toml-lang/toml) config format. By default, `hz serve` will look for this file
 in the current working directory. Here is [an example `.hz/config.toml` file from the Horizon CLI documentation](/cli/README.md#hzconfigtoml-file) ➡️.
@@ -134,7 +134,7 @@ in the current working directory. Here is [an example `.hz/config.toml` file fro
 > Be warned that there is a precedence to config file setting in the order of:
 > environment variables > config file > command-line flags
 
-### Adding OAuth authentication
+## Adding OAuth authentication
 
 With Horizon, we wanted to make it easy to allow your users to authenticate with the accounts
 they already have with the most popular services.
@@ -218,7 +218,7 @@ to @Tryneus.
 
 ---
 
-## The Horizon Client Library
+# The Horizon Client Library
 
 In the boilerplate created by `hz init`, you can see that the Horizon client library is being
 imported from the path `/horizon/horizon.js` served by Horizon Server. If you
@@ -275,7 +275,7 @@ chat.store(message);
 
 If we wanted, we could also add `.forEach` at the end of [`.store`][store] and handle the document `id`s created by the server as well as any errors that occur with storing. Check out [`.store`](https://github.com/rethinkdb/horizon/tree/next/client#store-------) in the [Horizon Client docs](https://github.com/rethinkdb/horizon/tree/next/client) ➡️.
 
-### Retrieving documents
+## Retrieving documents
 
 To retrieve messages from the collection we use [`.fetch`][fetch]. In this case, `.forEach` takes a result and error handler function.
 
@@ -295,7 +295,7 @@ chat.fetch().forEach(
   })
 ```
 
-### Removing documents
+## Removing documents
 
 To remove documents from a collection, you can use either [`.remove`][remove] or [`.removeAll`][removeAll]:
 
@@ -314,7 +314,7 @@ chat.removeAll([1, 2, 3])
 ```
 As with the other functions, you can chain `.forEach` onto the remove functions and provide response and error handlers.
 
-### Watching for changes
+## Watching for changes
 
 We can also "listen" to an entire collection, query, or a single document by using [`.watch`][watch].
 This is very convenient for building apps that want to update state immediately as data changes
@@ -365,7 +365,7 @@ chat.order("datetime").watch().forEach(
 
 To learn more about how Horizon works with React, check out [this complete Horizon & React example](https://github.com/rethinkdb/horizon/tree/next/examples/react-chat-app) ➡️.
 
-## Putting it all together
+# Putting it all together
 
 Now that we have the basics covered, let's pretend we are building a
 simple chat application where the messages are displayed
@@ -458,13 +458,13 @@ There's also plenty of other functions in the Horizon Client library to meet you
 [above][above], [below][below], [limit][limit], [replace][replace], and [upsert][upsert].
 
 
-## Bringing your app to Horizon
+# Bringing your app to Horizon
 
 We expect many people to already have an application in place but want to leverage
 the power of Horizon for their realtime data. Here are a few scenarios that will
 be relevant to you:
 
-### Do I need to output all my files into the `dist` folder?
+## Do I need to output all my files into the `dist` folder?
 
 The short and long answer is, **_no_**.
 
@@ -496,13 +496,13 @@ Just remember that when you make connections to Horizon Server to specify the po
 
 > **Note:** This will likely require setting CORS headers on the Horizon Server responses, which is a feature in progress, refer to [issue #239 for progress](https://github.com/rethinkdb/horizon/issues/239).
 
-### How do I add Horizon to X?
+## How do I add Horizon to X?
 
 If you already have a React, Angular, or Whatever Is Cool These Days:tm: application, you should first check our [examples directory](/examples) for different ways on how we have integrated Horizon into these frameworks.
 
 ---
 
-## Example Applications
+# Example Applications
 
 To show how Horizon fits with your framework of choice, we've put together a handful of
 example applications to help you get started.
@@ -518,7 +518,7 @@ example applications to help you get started.
  * [Vue TodoMVC App](https://github.com/rethinkdb/horizon/tree/next/examples/vue-todo-app)
 
 
-## Extending Horizon Server
+# Extending Horizon Server
 
 We also have a few examples of how you can extend Horizon Server. We imagine that once your application
 grows beyond the needs of simply providing the Horizon Client API, you'll want to expand and build upon

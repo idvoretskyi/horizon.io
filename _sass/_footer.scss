@@ -30,6 +30,7 @@ footer {
             background-repeat: no-repeat;
             background-position: left $_offset;
             background-size: $_size - $_offset;
+            strong { font-weight: 500; }
         }
 
         .button {

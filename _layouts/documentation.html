@@ -17,7 +17,12 @@ layout: default
             </section>
             {% endfor %}
         </nav>
-        <section class="docs-article">
+        <section class="docs-article document">
+            {% if page.hero_image %}
+                <img src="{{ page.hero_image }}">
+            {% else %}
+                <h1 class="title">{{ page.title }}</h1>
+            {% endif %}
             {{ content }}
         </section>
     </div>

@@ -1,6 +1,25 @@
 section.document {
     height: 100%;
+
     h1 {
-        font-size: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        &.title {
+            font-size: 1.8rem;
+        }
+    }
+
+    h2 {
+        font-weight: 500;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 { font-weight: 600; }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
     }
 }

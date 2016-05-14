@@ -1,5 +1,6 @@
 section.documentation {
     $navbar-width: 225px;
+    padding-bottom: 3rem;
 
     .site-container {
         display: flex;
@@ -33,5 +34,9 @@ section.documentation {
         width: 100%;
         max-width: $site-width - $navbar-width;
         flex-grow: 1;
+
+        h1.title {
+            font-size: 2.5rem;
+        }
     }
 }

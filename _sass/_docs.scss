@@ -1,0 +1,33 @@
+section.documentation {
+    $navbar-width: 225px;
+
+    .site-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    nav.docs-nav {
+        min-width: $navbar-width;
+
+        h1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        section { margin-bottom: 2rem; }
+        ul {
+            border-left: thin solid lighten($slate-grey-blue, 50);
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 1rem;
+
+            li a { display: block; }
+        }
+    }
+    section.docs-article {
+        width: 100%;
+        max-width: $site-width - $navbar-width;
+        flex-grow: 1;
+    }
+}

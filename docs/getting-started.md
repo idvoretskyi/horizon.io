@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: Getting started with Horizon
+id: getting-started
 ---
-![](/images/docs/horizon-cloud.png)
+![](/images/docs/getting-started.png)
 
 # Getting Started with Horizon
 

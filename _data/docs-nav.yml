@@ -1,0 +1,17 @@
+- section:
+    name: Getting started
+    docs:
+        - name: Install Horizon
+          id: install
+          url: /docs/install
+        - name: Getting started
+          id: getting-started
+          url: /docs/getting-started
+- section:
+    name: Integrations
+    docs:
+        - name: Example apps
+          id: example-apps
+          url: /docs/example-apps
+- section:
+    name: Community

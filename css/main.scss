@@ -27,9 +27,7 @@ $gentle-green: #25886E;
 $dusty-purple-grey: #EAEAF3;
 $deep-blue: #0F1E31;
 
-// Width of the content area
-$content-width:    800px;
-
+$site-width: 1200px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
@@ -52,7 +50,11 @@ $on-laptop:        800px;
     "bourbon/bourbon",
     "neat/neat",
     "base",
-    "base-components",
+    "components/buttons",
+    "components/terminal",
     "header",
+    "footer",
+    "document",
+    "docs",
     "landing"
 ;

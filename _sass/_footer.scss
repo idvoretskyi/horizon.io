@@ -1,0 +1,71 @@
+footer {
+    background: $deep-blue;
+    color: white;
+    padding: 60px 0;
+
+    h1.github {
+        font-size: 1.3rem;
+        a {
+            color: white;
+            border-bottom: thin dashed lighten($deep-blue, 40);
+        }
+    }
+
+    .site-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .about {
+        flex-basis: 375px;
+        margin-right: 125px;
+
+        h1.hz {
+            $_offset: 2px;
+            $_size: 50px;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            padding-left: $_size + 14px;
+            background-image: url('/images/horizon-mark.png');
+            background-repeat: no-repeat;
+            background-position: left $_offset;
+            background-size: $_size - $_offset;
+        }
+
+        .button {
+            $_size: 1.5rem;
+            background: $gentle-green;
+            background-image: url('/images/icons/icon-github-footer.png');
+            background-repeat: no-repeat;
+            background-position: 1.1rem center;
+            background-size: $_size auto;
+            font-size: 1.1rem;
+            text-align: left;
+            padding: 0.6rem 1rem 0.6rem $_size + 1.8rem;
+            line-height: 1.4rem;
+        }
+    }
+
+    .footer-right { flex-grow: 1;}
+    nav {
+        display: flex;
+        margin-bottom: 30px;
+        section {
+            flex-grow: 1;
+            margin: 0 40px;
+            &:first-child { margin-left: 0; }
+            &:last-child { margin-right: 0; }
+        }
+        h1 {
+            font-size: 1.2rem;
+            text-transform: lowercase;
+            border-bottom: thin solid lighten($deep-blue, 10);
+            padding-bottom: 0.3rem;
+        }
+        ul { margin: 0; }
+        li {
+            list-style-type: none;
+            font-size: 1rem;
+        }
+    }
+}

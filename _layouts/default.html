@@ -21,14 +21,32 @@
     </head>
 
     <body>
+        {% if layout.active %}
+            {% assign active = layout.active %}
+            {% if page.active %}
+                {% assign active = page.active %}
+            {% endif %}
+        {% endif %}
+
         <nav class="site-nav{% if page.type == 'landing' %} simple{% endif %}">
             <div class="site-container">
                 <a class="logo" href="/"><img src="/images/horizon-logo.png" alt="Horizon"></a>
                 <ul class="navbar-links">
-                    <li><a href="/cloud">Horizon Cloud</a></li>
-                    <li>Install</li>
-                    <li><a href="/docs">Docs</a></li>
-                    <li><a href="/community">Community</a></li>
+                    <li{% if active == 'cloud' %} class="active"{% endif%}>
+                        <a href="/cloud">Horizon Cloud</a>
+                    </li>
+                    <li{% if active == 'install' %} class="active"{% endif%}>
+                        <a href="/install">Install</a>
+                    </li>
+                    <li{% if active == 'docs' %} class="active"{% endif%}>
+                        <a href="/docs">Docs</a>
+                    </li>
+                    <li{% if active == 'community' %} class="active"{% endif%}>
+                        <a href="/community">Community</a>
+                    </li>
+                    <li{% if active == 'blog' %} class="active"{% endif%}>
+                        <a href="/blog">Blog</a>
+                    </li>
                 </ul>
             </div>
         </nav>

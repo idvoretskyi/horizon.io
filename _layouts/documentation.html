@@ -1,5 +1,6 @@
 ---
 layout: default
+active: docs
 ---
 <section class="documentation">
     <div class="site-container">
@@ -9,7 +10,8 @@ layout: default
                 <h1>{{ each.section.name }}</h1>
                 <ul>
                     {% for doc in each.section.docs %}
-                        <li>
+                        <li{% if page.id == doc.id %} class="active"{% endif %}>
+                            <!-- {{ doc.id }} | {{ page.id }} -->
                             <a href="{{ doc.url }}">{{ doc.name }}</a>
                         </li>
                     {% endfor %}

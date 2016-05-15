@@ -10,12 +10,9 @@
         - name: Quickstart
           id: quickstart
           url: /docs/quickstart
-        - name: Getting started (*)
+        - name: Getting started
           id: getting-started
           url: /docs/getting-started
-        - name: Tutorial
-          id: tutorial
-          url: /docs/tutorial
 - section:
     name: Building Horizon apps
     docs:
@@ -26,20 +23,11 @@
           id: auth
           url: /docs/auth
         - name: Users and groups
-          id: permissions
+          id: users-groups
           url: /docs/users
         - name: Permissions
           id: permissions
           url: /docs/permissions
-- section:
-    name: References
-    docs:
-        - name: Configuring Horizon
-          id: config
-          url: /docs/configuration
-        - name: Horizon server
-          id: server
-          url: /docs/server
         - name: Collection API
           id: api-collection
           url: /api/collection
@@ -49,6 +37,9 @@
 - section:
     name: Resources
     docs:
+        - name: Configuring Horizon
+          id: config
+          url: /docs/configuration
         - name: Example apps (*)
           id: example-apps
           url: /docs/example-apps

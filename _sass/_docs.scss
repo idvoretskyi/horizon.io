@@ -29,7 +29,8 @@ section.documentation {
                 font-size: 1.6rem;
             }
             li.active a {
-                color: black;
+                color: $text-color;
+                font-weight: 400;
                 text-decoration: none;
             }
         }

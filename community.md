@@ -2,6 +2,7 @@
 layout: document
 permalink: /community
 title: Community
+active: community
 ---
 
 ![](/images/community.png)

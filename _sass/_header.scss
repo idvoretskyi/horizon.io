@@ -16,8 +16,8 @@ nav.site-nav {
     }
 
     a {
-        text-decoration: none;
         color: $slate-grey-blue;
+        text-decoration: none;
         align-items: center;
     }
 
@@ -38,10 +38,13 @@ nav.site-nav {
             font-weight: 600;
             text-transform: uppercase;
             padding-right: 4rem;
-            color: $slate-grey-blue;
-
             &:last-child { padding-right: 0; }
-            a { display: block; }
+            a {
+                display: block;
+                border-bottom: 3px solid transparent;
+                padding-bottom: 0.2rem;
+            }
+            &.active a { border-bottom-color: lighten(desaturate(#4C6469,10), 20); }
         }
     }
 }

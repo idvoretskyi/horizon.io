@@ -5,7 +5,7 @@
 
 // Our variables
 $base-font-family: "Avenir W01", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-size:   1.6rem; // base font size is 16px, based on a root font-size of 62.5%/10px
 $base-font-weight: 200;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;

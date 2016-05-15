@@ -3,7 +3,7 @@
     width: 600px;
     height: 380px;
     position: relative;
-    $header-height: 25px;
+    $header-height: 2.5rem;
 
     .gray { color: gray; }
     .green { color: green; }
@@ -12,18 +12,18 @@
         background: #E0E8F0;
         height: $header-height;
         border-radius: 7px 7px 0 0;
-        padding-left: 10px;
+        padding-left: 1rem;
     }
     section.terminal {
         color: white;
         font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
-        font-size: 1rem;
+        font-size: 1.6rem;
         background: #30353A;
-        padding: 20px;
+        padding: 2rem;
         box-sizing: border-box;
         position: absolute;
         width: 100%;
-        top: 25px;
+        top: 2.5rem;
         bottom: 0;
         overflow: auto;
         .typed-cursor {

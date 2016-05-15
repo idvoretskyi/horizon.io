@@ -1,12 +1,12 @@
 nav.site-nav {
     .site-container { display: flex; }
 
-    $_logo-height: 50px;
-    $_padding-bottom: 30px;
+    $_logo-height: 5rem;
+    $_padding-bottom: 3rem;
     border-bottom: thin solid lighten(black, 90);
-    margin-top: 20px;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
     padding-bottom: $_padding-bottom;
-    margin-bottom: 50px;
     min-height: $_logo-height + $_padding-bottom;
 
     &.simple {
@@ -34,10 +34,10 @@ nav.site-nav {
         justify-content: flex-end;
         align-items: center;
         li {
-            font-size: 1rem;
+            font-size: 1.6rem;
             font-weight: 600;
             text-transform: uppercase;
-            padding-right: 40px;
+            padding-right: 4rem;
             color: $slate-grey-blue;
 
             &:last-child { padding-right: 0; }

@@ -1,6 +1,6 @@
 section.documentation {
     $navbar-width: 225px;
-    padding-bottom: 3rem;
+    padding-bottom: 4.8rem;
 
     .site-container {
         display: flex;
@@ -11,19 +11,22 @@ section.documentation {
         min-width: $navbar-width;
 
         h1 {
-            font-size: 1.1rem;
+            font-size: 1.8rem;
             font-weight: 500;
-            line-height: 0.8rem;
-            margin-bottom: 0.8rem;
+            line-height: 1.3rem;
+            margin-bottom: 1.3rem;
         }
-        section { margin-bottom: 2rem; }
+        section { margin-bottom: 3.2rem; }
         ul {
             border-left: thin solid lighten($slate-grey-blue, 50);
             list-style-type: none;
             margin-left: 0;
-            padding-left: 1rem;
+            padding-left: 1.7rem;
 
-            li a { display: block; }
+            li a {
+                display: block;
+                font-size: 1.6rem;
+            }
             li.active a {
                 color: black;
                 text-decoration: none;
@@ -34,9 +37,5 @@ section.documentation {
         width: 100%;
         max-width: $site-width - $navbar-width;
         flex-grow: 1;
-
-        h1.title {
-            font-size: 2.5rem;
-        }
     }
 }

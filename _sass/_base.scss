@@ -29,6 +29,7 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+html { font-size: 62.5%; } // 1rem should be 10px, or 62.5% of the browser default
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
@@ -59,7 +60,7 @@ hr {
     border: 0;
     height: 0;
     border-bottom: 1px solid lighten(black, 95);
-    margin: 2.5rem 0;
+    margin: 4rem 0;
 }
 
 /**
@@ -102,19 +103,19 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
 }
 
-h1 { font-size: 2rem; }
+h1 { font-size: 3.2rem; }
 
-h2 { font-size: 1.4rem; }
+h2 { font-size: 2.3rem; }
 
-h3 { font-size: 1.2rem; }
+h3 { font-size: 1.9rem; }
 
 /**
  * Paragraphs
  */
 p {
-    font-size: 1rem;
-    line-height: 1.6rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    margin-bottom: 1.3rem;
 }
 
 /**
@@ -139,9 +140,9 @@ a {
  */
 blockquote {
     color: $grey-color;
-    border-left: 4px solid $grey-color-light;
+    border-left: 0.4rem solid $grey-color-light;
     padding-left: $spacing-unit / 2;
-    font-size: 18px;
+    font-size: 1.8rem;
     letter-spacing: -1px;
     font-style: italic;
 
@@ -156,16 +157,16 @@ blockquote {
 pre,
 code {
     font-family: $mono-font-family;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     background: lighten(desaturate($bright-teal, 35), 60);
 }
 
 code {
-    padding: 1px 5px;
+    padding: 0.1rem 0.5rem;
 }
 
 pre {
-    padding: 0.5rem 0.7rem;
+    padding: 0.8rem 1.1rem;
     overflow-x: auto;
 
     > code {
@@ -195,8 +196,8 @@ pre {
 
     > svg {
         display: inline-block;
-        width: 16px;
-        height: 16px;
+        width: 1.6rem;
+        height: 1.6rem;
         vertical-align: middle;
 
         path {

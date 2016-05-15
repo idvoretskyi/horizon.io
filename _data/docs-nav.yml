@@ -1,6 +1,9 @@
 - section:
     name: Horizon basics
     docs:
+        - name: Overview
+          id: index
+          url: /docs
         - name: Install Horizon
           id: install
           url: /install

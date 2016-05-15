@@ -5,9 +5,7 @@ section.document {
         margin-top: 3.2rem;
         margin-bottom: 1.6rem;
         &:first-child { margin-top: 0;}
-        &.title {
-            font-size: 2.9rem;
-        }
+        &.title {}
     }
 
     h2 {

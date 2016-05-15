@@ -1,9 +1,7 @@
 section.documentation {
     $navbar-width: 250px;
-    padding-right: 25px;
-    padding-bottom: 4.8rem;
 
-    .site-container {
+    > .site-container {
         display: flex;
         flex-wrap: nowrap;
     }

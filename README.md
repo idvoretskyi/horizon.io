@@ -1,16 +1,24 @@
 # horizon.io
 The Horizon website.
 
+### Set up your environment
+
+To install the required packages:
+
+```
+bundle install
+```
+
 To preview the site:
 
 ```
-jekyll serve
+bundle exec jekyll serve
 ```
 
 To build the site:
 
 ```
-jekyll build
+bundle exec jekyll build
 ```
 
 The output will be in `_site`.

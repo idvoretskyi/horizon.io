@@ -19,12 +19,15 @@
 - section:
     name: Building Horizon apps
     docs:
-        - name: Integrations (*)
-          id: Integrations
-          url: /docs/integrations
+        - name: Horizon server
+          id: server
+          url: /docs/server
         - name: Authentication
           id: auth
           url: /docs/auth
+        - name: Users and groups
+          id: permissions
+          url: /docs/users
         - name: Permissions
           id: permissions
           url: /docs/permissions
@@ -49,6 +52,9 @@
         - name: Example apps (*)
           id: example-apps
           url: /docs/example-apps
+        - name: Integrations (*)
+          id: Integrations
+          url: /docs/integrations
         - name: Deploying Horizon apps
           id: deployment
           url: /docs/deployment

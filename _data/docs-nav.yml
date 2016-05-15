@@ -22,3 +22,25 @@
         - name: Example apps
           id: example-apps
           url: /docs/example-apps
+
+- section:
+    name: rethinkdb/horizon
+    docs:
+        - name: README
+          id: readme
+          url: /docs/github-docs/readme
+        - name: Getting started
+          id: getting-started
+          url: /docs/github-docs/getting-started
+        - name: Horizon server
+          id: horizon-server
+          url: /docs/github-docs/server
+        - name: Horizon client
+          id: horizon-client
+          url: /docs/github-docs/client
+        - name: Horizon CLI
+          id: horizon-cli
+          url: /docs/github-docs/cli
+        - name: Contributing
+          id: contributing
+          url: /docs/github-docs/contributing

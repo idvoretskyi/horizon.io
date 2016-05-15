@@ -1,10 +1,8 @@
 ---
 layout: documentation
-title: Horizon Client
+title: Horizon client library
 id: horizon-client
 ---
-
-# Horizon Client Library
 
 The Horizon client library. Built to interact with the [Horizon Server](/server) websocket API. Provides all the tooling to build a fully-functional and reactive front-end web application.
 

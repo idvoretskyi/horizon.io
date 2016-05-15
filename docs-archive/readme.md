@@ -6,8 +6,6 @@ id: readme
 
 <img style="width:100%;" src="/github-banner.png">
 
-# [Horizon](https://horizon.io)
-
 ## What is Horizon?
 
 Horizon is an open-source developer platform for building sophisticated realtime

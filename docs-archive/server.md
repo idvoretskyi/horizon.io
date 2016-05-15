@@ -1,10 +1,8 @@
 ---
 layout: documentation
-title: Horizon Server
+title: Horizon server
 id: horizon-server
 ---
-
-# Horizon Server
 
 An extensible middleware server built on top of [RethinkDB](https://github.com/rethinkdb/rethinkdb) which exposes a websocket API to front-end applications.
 

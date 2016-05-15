@@ -1,10 +1,8 @@
 ---
 layout: documentation
-title: Contributing
+title: Contributing to Horizon
 id: contributing
 ---
-
-# Contributing
 
 We're happy you want to contribute! You can help us in different ways:
 

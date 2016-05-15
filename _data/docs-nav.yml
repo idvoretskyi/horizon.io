@@ -58,19 +58,19 @@
     docs:
         - name: README
           id: readme
-          url: /docs/github-docs/readme
+          url: /docs-archive/readme
         - name: Getting started
           id: getting-started
-          url: /docs/github-docs/getting-started
+          url: /docs-archive/getting-started
         - name: Horizon server
           id: horizon-server
-          url: /docs/github-docs/server
+          url: /docs-archive/server
         - name: Horizon client
           id: horizon-client
-          url: /docs/github-docs/client
+          url: /docs-archive/client
         - name: Horizon CLI
           id: horizon-cli
-          url: /docs/github-docs/cli
+          url: /docs-archive/cli
         - name: Contributing
           id: contributing
-          url: /docs/github-docs/contributing
+          url: /docs-archive/contributing

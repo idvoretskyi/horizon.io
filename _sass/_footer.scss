@@ -56,6 +56,12 @@ footer {
             margin: 0 4rem;
             &:first-child { margin-left: 0; }
             &:last-child { margin-right: 0; }
+
+            ul li {
+              a { color: white }
+              a:visited { color: darken(white, 20%)}
+              a:link { color:white }
+            }
         }
         h1 {
             font-size: 1.9rem;

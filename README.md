@@ -6,19 +6,19 @@ The Horizon website.
 To install the required packages:
 
 ```
-bundle install
+rake init
 ```
 
 To preview the site:
 
 ```
-bundle exec jekyll serve
+rake
 ```
 
 To build the site:
 
 ```
-bundle exec jekyll build
+rake build
 ```
 
 The output will be in `_site`.

@@ -4,22 +4,22 @@ title: Blog
 active: blog
 body_class: blog
 ---
-<section class="blog">
+<section class="blog document">
     <div class="site-container">
         <section class="posts">
             {% for post in paginator.posts %}
                 {% comment %}<!-- Get the avatar for the author -->{% endcomment %}
                 {% if post.author_twitter %}
-                    {% capture avatar %}/assets/images/blog/authors/{{ post.author_twitter }}.png{% endcapture %}
+                    {% capture avatar %}/images/blog/authors/{{ post.author_twitter }}.png{% endcapture %}
                     {% capture author_link %}https://twitter.com/{{ post.author_twitter }}{% endcapture%}
                 {% else %}
-                    {% assign avatar = '/assets/images/blog/authors/horizon.png' %}
+                    {% assign avatar = '/images/blog/authors/horizon.png' %}
                     {% assign author_link = 'https://twitter.com/horizonjs' %}
                 {% endif %}
 
                 <article class="post">
-                    <a href="{{ post.url }}"><h1 class="title">{{ post.title }}</h1></a>
-                    <div class="post-byline">
+                    <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+                    <section class="post-byline">
                         <a class="avatar" href="{{ author_link }}">
                             <img src="{{ avatar }}">
                             <!--default-->
@@ -35,16 +35,16 @@ body_class: blog
                                 <li><a href="#">{{ tag }}</a></li>
                             {% endfor %}
                         </ul>
-                    </div>
-                    <div class="post-hero">
+                    </section>
+                    <section class="post-hero">
                         {% if post.hero_image %}
-                            <img src="/assets/images/posts/{{ post.hero_image }}">
+                            <img src="/images/posts/{{ post.hero_image }}">
                         {% endif %}
-                    </div>
-                    <div class="post-body">
+                    </section>
+                    <section class="post-body">
                         {{ post.excerpt | markdownify }}
-                    </div>
-                    <a class="post-link button outlined dark" href="{{post.url}}">Read the full post<i class="right-arrow"></i></a>
+                    </section>
+                    <a class="post-link button" href="{{post.url}}">Read the full post<i class="right-arrow"></i></a>
                 </article>
             {% endfor %}
             <section class="pagination">

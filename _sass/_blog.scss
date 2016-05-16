@@ -1,0 +1,100 @@
+section.blog .site-container {
+    display: flex;
+    section.blog { flex-grow: 1 }
+    aside.blog-sidebar {
+        min-width: 300px;
+        margin-left: 70px;
+    }
+}
+
+section.blog article.post {
+    h1.title {
+        a { color: $text-color; }
+        a:hover { text-decoration: none; }
+    }
+    a.avatar {
+        margin-right: 1.8rem;
+        &:hover { text-decoration: none; }
+        img {
+            height: 3.7rem;
+            margin-right: 1.3rem;
+        }
+    }
+    span.post-timestamp {
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: lighten($text-color, 30);
+    }
+    section.post-hero {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+section.blog aside.blog-sidebar {
+    // Sticky behavior for sidebar
+    .blog-sidebar-container.stuck {
+        position: fixed;
+        top: 0;
+        z-index: 5; // The sidebar should slide on top of the footer on short displays
+    }
+
+    // Typography and padding
+    h1 {
+        font-size: 1.8rem;
+        line-height: 2rem;
+        font-weight: 600;
+        color: $slate-grey-blue;
+        margin-bottom: 1.1rem;
+    }
+    p {
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        &:last-child { margin-bottom: 0; }
+    }
+
+    // Color each section with a background
+    .blog-sidebar-container section {
+        background: lighten(desaturate($bright-teal, 20), 60);
+        padding: 2rem 2.3rem;
+        margin-bottom: 2rem;
+    }
+
+    // GitHub "star this repo" link
+    section.github-star {
+        background: none;
+        position: relative;
+        .popup {
+            @include transition(left 0.2s ease-out);
+            position: absolute;
+            visibility: visible;
+            margin: 0;
+            left: 0%;
+            width: 85%;
+            overflow: visible;
+
+            &.hidden {
+                visibility: hidden;
+                left: 200px;
+            }
+
+            i.icon-github-popup {
+                margin-top: 0.1rem;
+                margin-right: 1rem;
+                $_size: 1.8rem;
+                background-image: url("/images/icons/icon-github-black.png");
+                background-position: center center;
+                background-repeat: no-repeat;
+                display: inline-block;
+                height: $_size;
+                width: $_size;
+                background-size: $_size $_size;
+                position: relative;
+                text-indent: -9999px;
+                vertical-align: top;
+                opacity: 0.65;
+            }
+        }
+    }
+}

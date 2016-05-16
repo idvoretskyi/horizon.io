@@ -1,0 +1,55 @@
+// Infobox styles
+
+.infobox {
+    background: rgb(230, 241, 244);
+    border-radius: 3px;
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    overflow: hidden;
+
+    &.infobox-alert { background: rgb(249, 243, 219); }
+
+    &.infobox-with-arrow {
+        &:after {
+            $_size: 10px;
+            content: '';
+            border-style: solid;
+            border-color: rgb(230, 241, 244) transparent;
+            border-width: 0 $_size $_size $_size;
+            display: block;
+            width: 0;
+            position: absolute;
+            top: -$_size;
+            left: 10%;
+            margin: 0 0 0 -$_size;
+        }
+        &.infobox-alert:after {
+            border-color: rgb(249, 243, 219) transparent;
+        }
+    }
+
+    // Layout and spacing
+    // p {
+    //     margin: 0;
+    //     padding-top: 2rem;
+    //     &:first-child {
+    //         margin-top: 0;
+    //         padding-top: 0;
+    //     }
+    //     &:last-child {
+    //         margin-bottom: 0;
+    //         padding-bottom: 0;
+    //     }
+    // }
+    // ul {
+    //     margin-top: rem(15);
+    //     margin-bottom: 0;
+    //     padding-bottom: 0;
+    //     li:last-child { margin-bottom: 0; }
+    //
+    //     > ul {
+    //         margin: 0;
+    //         li:last-child { margin-bottom: 0; }
+    //     }
+    // }
+}

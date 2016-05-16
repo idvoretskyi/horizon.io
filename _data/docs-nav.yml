@@ -10,9 +10,6 @@
         - name: FAQ
           id: faq
           url: /faq
-        - name: Quickstart
-          id: quickstart
-          url: /docs/quickstart
         - name: Getting started
           id: getting-started
           url: /docs/getting-started

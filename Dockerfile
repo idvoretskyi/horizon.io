@@ -7,25 +7,22 @@ RUN apt-get update && \
     apt-get -y install build-essential ruby ruby-dev && \
     apt-get -y autoremove && \
     apt-get -y autoclean && \
-    gem install jekyll
+    gem install bundler
+
+COPY Gemfile Gemfile.lock /tmp
+RUN bundle install --gemfile /tmp/Gemfile
 
 # Set up nginx
-RUN mkdir -p /etc/nginx/sites-available && mkdir -p /etc/nginx/sites-enabled
-COPY _docker/nginx.conf /etc/nginx/sites-available/horizon.io
+COPY _docker/nginx.conf /etc/nginx/nginx.conf
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-RUN ln -s /etc/nginx/sites-available/horizon.io /etc/nginx/sites-enabled/horizon.io && \
-    rm /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # Supervisor manages running services
 RUN mkdir -p /var/log/supervisor
-COPY supervisor.conf /etc/supervisor/conf.d/
+COPY _docker/supervisor.conf /etc/supervisor/conf.d/
 
-# Set up bundle for ruby
+# Copy assets
 COPY . /tmp/horizon.io/
-
-WORKDIR /tmp/horizon.io
-RUN bundle install
-RUN bundle exec jekyll build -s /tmp/horizon.io/ -d /var/www/horizon.io/public_html
+RUN bundle exec jekyll build -s /tmp/horizon.io/ -d /usr/share/nginx/html
 
 # Start services
 CMD ["supervisord", "-n"]

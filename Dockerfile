@@ -10,6 +10,7 @@ RUN apt-get update && \
     gem install jekyll
 
 # Set up nginx
+RUN mkdir -p /etc/nginx/sites-available && mkdir -p /etc/nginx/sites-enabled
 COPY _docker/nginx.conf /etc/nginx/sites-available/horizon.io
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN ln -s /etc/nginx/sites-available/horizon.io /etc/nginx/sites-enabled/horizon.io && \

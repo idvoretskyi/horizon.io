@@ -2,12 +2,14 @@
 layout: default
 active: blog
 body_class: blog
-blog_sidebar: 'post'
 ---
-{% if page.author_github %}
-    {% capture avatar %}/images/blog/authors/{{page.author_github}}.png{% endcapture %}
+{% comment %}<!-- Get the avatar for the author -->{% endcomment %}
+{% if post.author_twitter %}
+    {% capture avatar %}/images/blog/authors/{{ post.author_twitter }}.png{% endcapture %}
+    {% capture author_link %}https://twitter.com/{{ post.author_twitter }}{% endcapture%}
 {% else %}
-    {% assign avatar = '/images/blog/authors/rethinkdb.png' %}
+    {% assign avatar = '/images/blog/authors/horizon.png' %}
+    {% assign author_link = 'https://twitter.com/horizonjs' %}
 {% endif %}
 <section class="blog document">
     <div class="site-container">
@@ -15,10 +17,10 @@ blog_sidebar: 'post'
             <article class="post">
                 <div class="post-hero above">
                     {% if page.hero_image %}
-                        <img src="/assets/images/posts/{{ page.hero_image }}">
+                        <img src="/images/posts/{{ page.hero_image }}">
                     {% endif %}
                 </div>
-                <a href="{{ page.url }}"><h1 class="title">{{page.title }}</h1></a>
+                <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
                 <div class="post-byline">
                     <a class="avatar" href="{{ author_link }}">
                         <img src="{{ avatar }}">
@@ -26,7 +28,7 @@ blog_sidebar: 'post'
                         {% if page.author %}
                             {{ page.author }}
                         {% else %}
-                            RethinkDB Team
+                            Horizon Team
                         {% endif %}
                     </a>
                     <span class="post-timestamp">{{ page.date | date: "%B %d, %Y" }}</span>

@@ -24,7 +24,7 @@ COPY . /tmp/horizon.io/
 
 WORKDIR /tmp/horizon.io
 RUN bundle install
-RUN bundle exec jekyll build -s /tmp/horizon.io/ -d /var/www/horizon.io
+RUN bundle exec jekyll build -s /tmp/horizon.io/ -d /var/www/horizon.io/public_html
 
 # Start services
 CMD ["supervisord", "-n"]

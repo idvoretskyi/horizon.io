@@ -7,9 +7,9 @@ active: community
 
 ![](/images/community.png)
 
-# Engage with the Horizon community
+# Join the Horizon community
 
-## Join us on Slack
+## Find us on Slack
 Chat with other community members, meet the team, and get your questions answered on our community Slack.
 
 <a href="http://slack.rethinkdb.com/"><img valign="middle"  src="http://slack.rethinkdb.com/badge.svg"></a>
@@ -24,5 +24,4 @@ Submit bug reports, suggest new features, or follow development on our [GitHub r
 ## Other ways to keep in touch
 - We'd love to hear how you're using Horizon. [Send us your story](https://rethinkdb.wufoo.com/forms/horizon-shirts-for-stories/) and we'll send you a super soft Horizon t-shirt!
 - Reach us on [Twitter](https://twitter.com/horizonjs)
-- [Sign up](https://rethinkdb.wufoo.com/forms/horizon-newsletter/) for the Horizon newsletter. We respect your privacy and promise to only email you when we have something important to share. 
-
+- [Sign up](https://rethinkdb.wufoo.com/forms/horizon-newsletter/) for the Horizon newsletter. We respect your privacy and promise to only email you when we have something important to share.

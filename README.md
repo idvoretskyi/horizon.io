@@ -1,5 +1,5 @@
 # horizon.io
-The Horizon website.
+The Horizon website. Woot. Dalan, you know nothing.
 
 ### Set up your environment
 

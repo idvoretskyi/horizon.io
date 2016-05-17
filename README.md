@@ -1,5 +1,5 @@
 # horizon.io
-The Horizon website. Woot.
+The Horizon website. Woot. God damn you Github.
 
 ### Set up your environment
 

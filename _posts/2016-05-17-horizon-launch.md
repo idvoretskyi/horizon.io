@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Introducing Horizon: build realtime web apps without writing backend code"
+title: "Introducing Horizon: build realtime web apps without writing backend
+code"
 author: Ryan Paul
 author_github: segphault
 hero_image: 2016-05-17/horizon-launch.png

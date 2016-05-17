@@ -14,6 +14,7 @@ paginate_file: blog/index.html
 paginate_path: /blog/page:num
 permalink: /blog/:title
 excerpt_separator: <!--more-->
+future: true
 
 # RSS settings
 rss:

@@ -40,15 +40,15 @@
         - name: Configuring Horizon
           id: config
           url: /docs/configuration
-        - name: Example apps (*)
-          id: example-apps
-          url: /docs/example-apps
-        - name: Integrations (*)
-          id: Integrations
-          url: /docs/integrations
-        - name: Deploying Horizon apps
-          id: deployment
-          url: /docs/deployment
+        - name: Example apps
+          id: examples
+          url: /docs/examples
+#        - name: Integrations (*)
+#          id: Integrations
+#          url: /docs/integrations
+#        - name: Deploying Horizon apps
+#          id: deployment
+#          url: /docs/deployment
 
 - section:
     name: rethinkdb/horizon

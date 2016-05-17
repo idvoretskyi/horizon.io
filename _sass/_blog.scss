@@ -8,6 +8,8 @@ section.blog .site-container {
 }
 
 section.blog article.post {
+    margin-bottom: 3rem;
+
     h1.title {
         a { color: $text-color; }
         a:hover { text-decoration: none; }
@@ -29,6 +31,21 @@ section.blog article.post {
     section.post-hero {
         margin-top: 3rem;
         margin-bottom: 3rem;
+    }
+
+    a.button.post-link {
+        $_color: $bright-teal;
+        font-size: 1.7rem;
+        color: $_color;
+        border: thin solid $_color;
+        padding: 0.6rem 2.5rem;
+        margin: 2.5rem 0;
+
+        .svg-icon {
+            fill: $_color;
+            height: 1.4rem;
+            margin-left: 0.5rem;
+        }
     }
 }
 
@@ -95,6 +112,38 @@ section.blog aside.blog-sidebar {
                 vertical-align: top;
                 opacity: 0.65;
             }
+        }
+    }
+}
+
+section.blog .pagination {
+    display: flex;
+    .pager.newer-posts { text-align: right; }
+    .pager {
+        flex-grow: 1;
+        background: none;
+        border: none;
+        color: $slate-grey-blue;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 0;
+        text-transform: uppercase;
+
+
+        * { vertical-align: middle; }
+        .svg-icon {
+            fill: $slate-grey-blue;
+            height: 1.4rem;
+            position: relative;
+            left: 0;
+            @include transition(all 0.1s linear);
+        }
+        &:hover {
+          color: $slate-grey-blue;
+          text-decoration: none;
+          .icon-chevron-left { left: -0.6rem; }
+          .icon-chevron-right { left: 1rem; }
         }
     }
 }

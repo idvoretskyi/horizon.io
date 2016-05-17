@@ -44,15 +44,17 @@ body_class: blog
                     <section class="post-body">
                         {{ post.excerpt | markdownify }}
                     </section>
-                    <a class="post-link button" href="{{post.url}}">Read the full post<i class="right-arrow"></i></a>
+                    <a class="post-link button" href="{{post.url}}"><span>Read the full post</span>{% include icons/chevron-right-hairline.svg %}</a>
                 </article>
             {% endfor %}
             <section class="pagination">
+                <a href="{{ paginator.next_page_path }}" class="pager older-posts">{% include icons/chevron-left.svg %}<span>Older posts</span></a>
+                <a href="{{ paginator.previous_page_path }}" class="pager newer-posts"><span>Newer posts</span> {% include icons/chevron-right.svg %} </a>
                 {% if paginator.next_page %}
-                    <a href="{{ paginator.next_page_path }}" class="button minimal older-posts"><i class="left-arrow">prev</i> Older posts</a>
+                    <a href="{{ paginator.next_page_path }}" class="button minimal older-posts">{% include icons/chevron-left.svg %} Older posts</a>
                 {% endif %}
                 {% if paginator.previous_page %}
-                    <a href="{{ paginator.previous_page_path }}" class="button minimal newer-posts">Newer posts <i class="right-arrow">next</i></a>
+                    <a href="{{ paginator.previous_page_path }}" class="button minimal newer-posts">Newer posts {% include icons/chevron-right.svg %}</a>
                 {% endif %}
             </section>
         </section>

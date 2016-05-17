@@ -75,4 +75,23 @@ footer {
             font-size: 1.6rem;
         }
     }
+
+    @media (max-width: $mobile) {
+        padding-bottom: 4rem;
+        .site-container { flex-direction: column; }
+        h1.github { margin-top: 4rem; }
+        section.about {
+            margin-right: 0;
+            margin-bottom: 4rem;
+            flex-basis: initial;
+        }
+        nav.site-map {
+            flex-direction: column;
+            section {
+                margin-left: 0;
+                margin-bottom: 2rem;
+                &:last-child { margin-bottom: 0; }
+            }
+        }
+    }
 }

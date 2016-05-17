@@ -1,6 +1,6 @@
 a.button {
     display: inline-block;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     text-align: center;
     padding: 1rem 3.5rem;
     border-radius: 3px;
@@ -8,14 +8,21 @@ a.button {
     cursor: pointer;
     * { vertical-align: middle; }
 
+    @media (max-width: $mobile) {
+        font-size: 1.5rem;
+        padding: 0.7rem 2.5rem;
+        span { margin-right: 0.1rem; }
+        .svg-icon { height: 1.4rem; }
+    }
+
+    span { margin-right: 0.2rem; }
+    .svg-icon {
+        fill: white;
+        height: 1.5rem;
+    }
+
     &.primary-button {
         background: rgb(238,122,117);
         color: white;
-
-        span { margin-right: 0.2rem; }
-        .svg-icon {
-            fill: white;
-            height: 1.5rem;
-        }
     }
 }

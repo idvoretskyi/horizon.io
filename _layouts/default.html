@@ -46,11 +46,17 @@
             <div class="site-container">
                 <a class="logo" href="/"><img src="/images/horizon-logo.png" alt="Horizon"></a>
                 <ul class="navbar-links">
+                    <li class="menu-trigger">
+                        {% include icons/menu-icon.svg %}
+                    </li>
                     <li{% if active == 'cloud' %} class="active"{% endif%}>
                         <a href="/cloud">Horizon Cloud</a>
                     </li>
                     <li{% if active == 'install' %} class="active"{% endif%}>
                         <a href="/install">Install</a>
+                    </li>
+                    <li{% if active == 'faq' %} class="active"{% endif%}>
+                        <a href="/faq">FAQ</a>
                     </li>
                     <li{% if active == 'docs' %} class="active"{% endif%}>
                         <a href="/docs">Docs</a>
@@ -71,7 +77,7 @@
             <div class="site-container">
                 <section class="about">
                     <h1 class="hz">Horizon is a <strong>realtime, open-source backend</strong> for JavaScript apps.</h1>
-                    <a class="button primary-button">Star the project on GitHub</a>
+                    <a href="https://github.com/rethinkdb/horizon" class="button primary-button">Star the project on GitHub</a>
                 </section>
                 <section class="footer-right">
                     <nav class="site-map">
@@ -80,7 +86,7 @@
                             <ul>
                                 <li><a href="/faq">FAQ</a></li>
                                 <li><a href="/install">Install</a></li>
-                                <li><a href="/quickstart">Quickstart</a></li>
+                                <li><a href="/docs/getting-started">Getting started</a></li>
                             </ul>
                         </section>
                         <section>
@@ -104,7 +110,7 @@
                 </section>
             </div>
         </footer>
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
           var _gauges = _gauges || [];
           (function() {
             var t   = document.createElement('script');
@@ -127,6 +133,6 @@
           ga('create', 'UA-9922584-3', 'auto');
           ga('send', 'pageview');
 
-      </script>-->
+      </script>
     </body>
 </html>

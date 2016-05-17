@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get -y autoclean && \
     gem install bundler
 
-COPY Gemfile Gemfile.lock /tmp
+COPY Gemfile Gemfile.lock /tmp/
 RUN bundle install --gemfile /tmp/Gemfile
 
 # Set up nginx

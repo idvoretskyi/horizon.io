@@ -8,6 +8,21 @@ section.blog .site-container {
         margin-left: 70px;
         .blog-sidebar-container { max-width: $_width; }
     }
+    @media (max-width: $medium) {
+        flex-direction: column;
+        aside.blog-sidebar {
+            display: none; // TODO rework responsive styles
+            margin: 3rem 0;
+            .blog-sidebar-container {
+                display: flex;
+                .popup.hidden {
+                    visibility: visible;
+                    left: 0;
+                }
+                &.stuck { position: relative; }
+            }
+        }
+    }
 }
 
 section.blog article.post {
@@ -48,6 +63,38 @@ section.blog article.post {
             fill: $_color;
             height: 1.4rem;
             margin-left: 0.5rem;
+        }
+    }
+}
+
+section.blog .pagination {
+    display: flex;
+    .pager.newer-posts { text-align: right; }
+    .pager {
+        flex-grow: 1;
+        background: none;
+        border: none;
+        color: $slate-grey-blue;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 0;
+        text-transform: uppercase;
+
+
+        * { vertical-align: middle; }
+        .svg-icon {
+            fill: $slate-grey-blue;
+            height: 1.4rem;
+            position: relative;
+            left: 0;
+            @include transition(all 0.1s linear);
+        }
+        &:hover {
+          color: $slate-grey-blue;
+          text-decoration: none;
+          .icon-chevron-left { left: -0.6rem; }
+          .icon-chevron-right { left: 1rem; }
         }
     }
 }
@@ -122,36 +169,8 @@ section.blog aside.blog-sidebar {
             }
         }
     }
-}
 
-section.blog .pagination {
-    display: flex;
-    .pager.newer-posts { text-align: right; }
-    .pager {
-        flex-grow: 1;
-        background: none;
-        border: none;
-        color: $slate-grey-blue;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding: 0;
-        text-transform: uppercase;
+    @media (max-width: $medium) {
 
-
-        * { vertical-align: middle; }
-        .svg-icon {
-            fill: $slate-grey-blue;
-            height: 1.4rem;
-            position: relative;
-            left: 0;
-            @include transition(all 0.1s linear);
-        }
-        &:hover {
-          color: $slate-grey-blue;
-          text-decoration: none;
-          .icon-chevron-left { left: -0.6rem; }
-          .icon-chevron-right { left: 1rem; }
-        }
     }
 }

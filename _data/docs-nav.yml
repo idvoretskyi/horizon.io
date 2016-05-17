@@ -23,7 +23,7 @@
           id: auth
           url: /docs/auth
         - name: Users and groups
-          id: users-groups
+          id: users
           url: /docs/users
         - name: Permissions
           id: permissions

@@ -38,4 +38,10 @@ section.documentation {
         max-width: $site-width - $navbar-width;
         flex-grow: 1;
     }
+
+    @media (max-width: $mobile) {
+        > .site-container {
+            flex-direction: column;
+        }
+    }
 }

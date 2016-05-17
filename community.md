@@ -1,6 +1,6 @@
 ---
 layout: document
-permalink: /community
+permalink: /community/
 title: Community
 active: community
 ---

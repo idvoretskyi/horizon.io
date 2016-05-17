@@ -24,7 +24,11 @@ nav.site-nav {
     a.logo img {
         height: $_logo-height;
         flex-shrink: 0;
+        min-width: 220px // TODO remove this when we have a responsive design
     }
+
+
+
 
     ul {
         margin: 0;
@@ -45,6 +49,20 @@ nav.site-nav {
                 padding-bottom: 0.2rem;
             }
             &.active a { border-bottom-color: lighten(desaturate(#4C6469,10), 20); }
+            &.menu-trigger { display: none; }
+        }
+
+        @media (max-width: $medium) {
+            li {
+                font-size: 1.5rem;
+                padding-right: 3.7rem;
+            }
+        }
+        @media (max-width: $mobile) {
+            // Hide other links until user taps 'Menu'
+            li { display: none; }
+            // Only show the 'menu' link at first
+            li.menu-trigger { display: block; }
         }
     }
 }

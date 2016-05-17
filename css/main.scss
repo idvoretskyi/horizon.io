@@ -4,11 +4,13 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: "avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-family: "Avenir W01", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   1.8rem; // base font size is 16px, based on a root font-size of 62.5%/10px
 $base-font-weight: 200;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 3rem;
+
+$mono-font-family: "Droid Sans Mono W01",  "Menlo", monospace;
 
 $spacing-unit:     30px;
 
@@ -27,9 +29,7 @@ $gentle-green: #25886E;
 $dusty-purple-grey: #EAEAF3;
 $deep-blue: #0F1E31;
 
-// Width of the content area
-$content-width:    800px;
-
+$site-width: 1200px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
@@ -52,7 +52,13 @@ $on-laptop:        800px;
     "bourbon/bourbon",
     "neat/neat",
     "base",
-    "base-components",
+    "components/buttons",
+    "components/icons",
+    "components/infobox",
     "header",
-    "landing"
+    "footer",
+    "landing",
+    "document",
+    "docs",
+    "blog"
 ;

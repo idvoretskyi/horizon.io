@@ -1,0 +1,40 @@
+.terminal-window {
+    text-align: left;
+    width: 600px;
+    height: 380px;
+    position: relative;
+    $header-height: 2.5rem;
+
+    .gray { color: gray; }
+    .green { color: green; }
+
+    header {
+        background: #E0E8F0;
+        height: $header-height;
+        border-radius: 7px 7px 0 0;
+        padding-left: 1rem;
+    }
+    section.terminal {
+        color: white;
+        font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+        font-size: 1.6rem;
+        background: #30353A;
+        padding: 2rem;
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        top: 2.5rem;
+        bottom: 0;
+        overflow: auto;
+        .typed-cursor {
+            opacity: 1;
+            @include animation(blink 0.7s infinite);
+        }
+        .terminal-data { display: none; }
+    }
+    @include keyframes(blink) {
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+}

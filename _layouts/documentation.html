@@ -1,8 +1,31 @@
 ---
 layout: default
+active: docs
 ---
 <section class="documentation">
     <div class="site-container">
-        {{ content }}
+        <nav class="docs-nav">
+            {% for each in site.data['docs-nav'] %}
+            <section>
+                <h1>{{ each.section.name }}</h1>
+                <ul>
+                    {% for doc in each.section.docs %}
+                        <li{% if page.id == doc.id %} class="active"{% endif %}>
+                            <!-- {{ doc.id }} | {{ page.id }} -->
+                            <a href="{{ doc.url }}">{{ doc.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endfor %}
+        </nav>
+        <section class="docs-article document">
+            {% if page.hero_image %}
+                <img src="{{ page.hero_image }}">
+            {% else %}
+                <h1 class="title">{{ page.title }}</h1>
+            {% endif %}
+            {{ content }}
+        </section>
     </div>
 </section>

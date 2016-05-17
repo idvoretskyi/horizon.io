@@ -1,42 +1,50 @@
 nav.site-nav {
     .site-container { display: flex; }
-    margin-top: 20px;
-    a {
-        text-decoration: none;
-        color: $slate-grey-blue;
+
+    $_logo-height: 5rem;
+    $_padding-bottom: 3rem;
+    border-bottom: thin solid lighten(black, 90);
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding-bottom: $_padding-bottom;
+    min-height: $_logo-height + $_padding-bottom;
+
+    &.simple {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
     }
 
-    h1.logo {
-        $size: 3rem;
-        font-family: "museo-sans", sans-serif;
-        font-size: $size;
-        font-weight: 300;
-        line-height: normal;
-        text-transform: lowercase;
-        background: url('/images/horizon-mark.png');
-        background-position: left;
-        background-repeat: no-repeat;
-        background-size: $size * 0.9;
-        padding-left: $size*1.2;
-        margin: 0;
-        margin-right: $size*0.2;
+    a {
+        color: $slate-grey-blue;
+        text-decoration: none;
+        align-items: center;
     }
+
+    a.logo img {
+        height: $_logo-height;
+        flex-shrink: 0;
+    }
+
     ul {
+        margin: 0;
         display: flex;
         flex-grow: 1;
         list-style-type: none;
-        margin: 0;
         justify-content: flex-end;
+        align-items: center;
         li {
-            font-size: 1rem;
+            font-size: 1.6rem;
             font-weight: 600;
             text-transform: uppercase;
-            padding-right: 40px;
-            color: $slate-grey-blue;
-
-            &:last-child {
-                padding-right: 0;
+            padding-right: 4rem;
+            &:last-child { padding-right: 0; }
+            a {
+                display: block;
+                border-bottom: 3px solid transparent;
+                padding-bottom: 0.2rem;
             }
+            &.active a { border-bottom-color: lighten(desaturate(#4C6469,10), 20); }
         }
     }
 }

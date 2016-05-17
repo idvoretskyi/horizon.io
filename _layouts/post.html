@@ -1,0 +1,48 @@
+---
+layout: default
+active: blog
+body_class: blog
+---
+{% comment %}<!-- Get the avatar for the author -->{% endcomment %}
+{% if post.author_twitter %}
+    {% capture avatar %}/images/blog/authors/{{ post.author_twitter }}.png{% endcapture %}
+    {% capture author_link %}https://twitter.com/{{ post.author_twitter }}{% endcapture%}
+{% else %}
+    {% assign avatar = '/images/blog/authors/horizon.png' %}
+    {% assign author_link = 'https://twitter.com/horizonjs' %}
+{% endif %}
+<section class="blog document">
+    <div class="site-container">
+        <section class="post-container">
+            <article class="post">
+                <div class="post-hero above">
+                    {% if page.hero_image %}
+                        <img src="/images/posts/{{ page.hero_image }}">
+                    {% endif %}
+                </div>
+                <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+                <div class="post-byline">
+                    <a class="avatar" href="{{ author_link }}">
+                        <img src="{{ avatar }}">
+                        <!--default-->
+                        {% if page.author %}
+                            {{ page.author }}
+                        {% else %}
+                            Horizon Team
+                        {% endif %}
+                    </a>
+                    <span class="post-timestamp">{{ page.date | date: "%B %d, %Y" }}</span>
+                    <ul class="post-tags">
+                        {% for tag in page.tags %}
+                            <li><a href="#">{{ tag }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="post-body">
+                    {{ content }}
+                </div>
+            </article>
+        </section>
+        {% include blog-sidebar.html %}
+    </div>
+</section>

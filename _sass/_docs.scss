@@ -1,0 +1,41 @@
+section.documentation {
+    $navbar-width: 250px;
+
+    > .site-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    nav.docs-nav {
+        min-width: $navbar-width;
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.3rem;
+            margin-bottom: 1.3rem;
+        }
+        section { margin-bottom: 3.2rem; }
+        ul {
+            border-left: thin solid lighten($slate-grey-blue, 50);
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 1.7rem;
+
+            li a {
+                display: block;
+                font-size: 1.6rem;
+            }
+            li.active a {
+                color: $text-color;
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+    }
+    section.docs-article {
+        width: 100%;
+        max-width: $site-width - $navbar-width;
+        flex-grow: 1;
+    }
+}

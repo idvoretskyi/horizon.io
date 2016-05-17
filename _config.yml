@@ -1,2 +1,23 @@
 title: "Horizon: the realtime, open-source JavaScript backend"
 markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
+    hard_wrap: false
+    toc_levels: '1'
+exclude: ['README.md']
+gems: ['jekyll-paginate']
+
+# Blog settings
+paginate: 5
+paginate_file: blog/index.html
+paginate_path: /blog/page:num
+permalink: /blog/:title
+excerpt_separator: <!--more-->
+future: true
+
+# RSS settings
+rss:
+    name: "Horizon: the realtime, open-source JavaScript backend"
+    description: News and updates from the Horizon team.
+    url: https://horizon.io

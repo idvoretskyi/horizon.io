@@ -1,0 +1,73 @@
+- section:
+    name: Horizon basics
+    docs:
+        - name: Overview
+          id: index
+          url: /docs
+        - name: Install Horizon
+          id: install
+          url: /install
+        - name: FAQ
+          id: faq
+          url: /faq
+        - name: Getting started
+          id: getting-started
+          url: /docs/getting-started
+- section:
+    name: Building Horizon apps
+    docs:
+        - name: Horizon server
+          id: server
+          url: /docs/server
+        - name: Authentication
+          id: auth
+          url: /docs/auth
+        - name: Users and groups
+          id: users-groups
+          url: /docs/users
+        - name: Permissions
+          id: permissions
+          url: /docs/permissions
+        - name: Collection API
+          id: api-collection
+          url: /api/collection
+        - name: Horizon API
+          id: api-horizon
+          url: /api/horizon
+- section:
+    name: Resources
+    docs:
+        - name: Configuring Horizon
+          id: config
+          url: /docs/configuration
+        - name: Example apps (*)
+          id: example-apps
+          url: /docs/example-apps
+        - name: Integrations (*)
+          id: Integrations
+          url: /docs/integrations
+        - name: Deploying Horizon apps
+          id: deployment
+          url: /docs/deployment
+
+- section:
+    name: rethinkdb/horizon
+    docs:
+        - name: README
+          id: readme
+          url: /docs-archive/readme
+        - name: Getting started
+          id: getting-started
+          url: /docs-archive/getting-started
+        - name: Horizon server
+          id: horizon-server
+          url: /docs-archive/server
+        - name: Horizon client
+          id: horizon-client
+          url: /docs-archive/client
+        - name: Horizon CLI
+          id: horizon-cli
+          url: /docs-archive/cli
+        - name: Contributing
+          id: contributing
+          url: /docs-archive/contributing

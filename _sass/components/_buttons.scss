@@ -11,5 +11,11 @@ a.button {
     &.primary-button {
         background: rgb(238,122,117);
         color: white;
+
+        span { margin-right: 0.2rem; }
+        .svg-icon {
+            fill: white;
+            height: 1.5rem;
+        }
     }
 }

@@ -22,3 +22,10 @@ rake build
 ```
 
 The output will be in `_site`.
+
+
+# WARNING
+
+Do not edit any documentation in the `docs` folder. It will get periodically
+overwritten and resynced from the rethinkdb/horizon-docs repo, which is where
+all documentation edits should go.

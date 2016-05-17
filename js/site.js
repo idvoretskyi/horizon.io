@@ -7,4 +7,23 @@ $(document).ready(function() {
     //     rules: { email: { email: true } },
     //     submitHandler: function(form) { form.submit(); }
     // });
+
+
+
+    // Blog right panel should be set to a fixed position on scroll
+    var $sidebar = $('.blog-sidebar-container')
+    if ($sidebar.length > 0) {
+        var blog_sidebar_sticky = new Waypoint.Sticky({
+            element: $sidebar
+        });
+        blog_sidebar_github = new Waypoint({
+            element: $sidebar,
+            handler: function(direction) {
+                // Delay the popup animation
+                setTimeout(function() {
+                    $('.github-star .popup', $sidebar).removeClass('hidden')
+                }, 2000)
+            }
+        });
+    }
 });

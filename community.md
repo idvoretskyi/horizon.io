@@ -10,27 +10,19 @@ active: community
 # Engage with the Horizon community
 
 ## Join us on Slack
-Meet the RethinkDB team, chat with the community members, and get your questions answered on our community Slack.
+Chat with other community members, meet the team, and get your questions answered on our community Slack.
 
 <a href="http://slack.rethinkdb.com/"><img valign="middle"  src="http://slack.rethinkdb.com/badge.svg"></a>
 
 ## Ask for help
 If your question is a bit more involved or maybe has a lot of moving parts, check out our Horizon Discourse at
-[discuss.horizon.io](https://discuss.horizon.io/c/get-help). We have a special category #get-help where people can
-post question topics and get assistance.
+[discuss.horizon.io](https://discuss.horizon.io). Post your questions directly to [#get-help](https://discuss.horizon.io/c/get-help) for assistance.
 
 ## Found a bug?
-If you've coming across something that should definitely be working, don't hesitate to [create an issue on repo](https://github.com/rethinkdb/horizon/issues/new).
+Submit bug reports, suggest new features, or follow development on our [GitHub repo](https://github.com/rethinkdb/horizon/issues/new).
 
-<aside>
-**Shirts for Stories**
-We'd love to hear about the things you're building with Horizon. Send us your story and we will send you an awesome Horizon t-shirt.
+## Other ways to keep in touch
+- We'd love to hear how you're using Horizon. [Send us your story](https://rethinkdb.wufoo.com/forms/horizon-shirts-for-stories/) and we'll send you a super soft Horizon t-shirt!
+- Reach us on [Twitter](https://twitter.com/horizonjs)
+- [Sign up](https://rethinkdb.wufoo.com/forms/horizon-newsletter/) for the Horizon newsletter. We respect your privacy and promise to only email you when we have something important to share. 
 
-<button> Send us your story </button>
-</aside>
-
-<aside>
-**Sign up for the Horizon newsletter**
-We promise to only email when we have something important to share.
-<input type="email" placeholder="dalanmiller@rethinkdb.com">
-</aside>

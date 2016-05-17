@@ -28,17 +28,17 @@ messages.store({
 });
 
 // get the first message from Bob
-messages.find({from: "bob"}).fetch().forEach(msg => console.log(msg));
+messages.find({from: "bob"}).fetch().subscribe(msg => console.log(msg));
 
 // the same, using a Horizon object directly
-hz("messages").find({from: "bob"}).fetch().forEach(msg => console.log(msg));
+hz("messages").find({from: "bob"}).fetch().subscribe(msg => console.log(msg));
 
 // get the message with ID 101; a "shortcut" that only works when fetching based on the
 // unique document ID (the equivalent long form is `find({id: 101})`)
-messages.find(101).fetch().forEach(msg => console.log(msg));
+messages.find(101).fetch().subscribe(msg => console.log(msg));
 
 // get all messages from Bob, ordered by ID
-messages.order("id").findAll({from: "bob"}).fetch().forEach(msg => console.log(msg));
+messages.order("id").findAll({from: "bob"}).fetch().subscribe(msg => console.log(msg));
 ```
 
 # Methods
@@ -47,9 +47,9 @@ messages.order("id").findAll({from: "bob"}).fetch().forEach(msg => console.log(m
 * Table of Contents
 {:toc}
 
-## Collection.fetch() {#fetch}
+## Collection.fetch {#fetch}
 
-Return an Observable containing the query result set.
+Return a [RxJS Observable](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) containing the query result set.
 
 ```js
 Collection.fetch()
@@ -57,7 +57,7 @@ Collection.fetch()
 
 Unlike [watch](#watch), the `fetch` command does not update in real time, but rather returns a "snapshot" of the result set as it exists when `fetch` is executed. The `fetch` or `watch` command ends a Horizon query.
 
-The Observable returned by `fetch` or `watch` may be iterated through with `[subscribe](#subscribe)` or `forEach`, or converted to an array with `toArray`.
+The Observable returned by `fetch` or `watch` may be iterated through with [subscribe](#subscribe) or `forEach`, or converted to an array with `toArray`.
 
 ```js
 const hz = Horizon();
@@ -69,7 +69,7 @@ hz("messages").fetch().subscribe(
 );
 ```
 
-## Collection.subscribe() {#subscribe}
+## Collection.subscribe {#subscribe}
 
 Provide handlers to a Collection result set.
 
@@ -79,11 +79,13 @@ Collection.store().subscribe(writeFunction, errorFunction)
 Collection.watch().subscribe(changefeedFunction, errorFunction)
 ```
 
+This method is not actually part of the `Collection` class, but is instead a [RxJS method](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-subscribe).
+
 When `subscribe` is chained off a read function (i.e., [fetch](#fetch)) it takes three callback functions:
 
-* `readFunction(result)`: a callback that receives a single document as the Collection is iterated through
-* `errorFunction(error)`: a callback that receives error information if an error occurs
-* `completedFunction()`: a callback executed when the result set has been iterated through completely
+* `next(result)`: a callback that receives a single document as the Collection is iterated through
+* `error(error)`: a callback that receives error information if an error occurs
+* `complete()`: a callback executed when the result set has been iterated through completely
 
 ```js
 const hz = Horizon();
@@ -95,10 +97,10 @@ hz("messages").fetch().subscribe(
 );
 ```
 
-When chained off a write function (e.g., [store](#store), [upsert](#upsert)), it takes three callback functions:
+When chained off a write function (e.g., [store](#store), [upsert](#upsert)), it takes two callback functions:
 
-* `writeFunction(id)`: a callback that receives the `id` of the documents written, one at a time
-* `errorFunction(error)`: a callback that receives error information if an error occurs
+* `write(id)`: a callback that receives the `id` of the documents written, one at a time
+* `error(error)`: a callback that receives error information if an error occurs
 
 ```js
 hz("messages").store([
@@ -124,14 +126,14 @@ This would produce output similar to:
 
 In the first case, the `id` value is an automatically generated UUID; in the second, it was supplied with Bob's message.
 
-When `subscribe` is chained off `[watch](#watch)`, it takes two callback functions:
+When `subscribe` is chained off [watch](#watch), it takes two callback functions:
 
-* `changefeedFunction(result)`: a callback that receives a changefeed result document
-* `errorFunction(error)`: a callback that receives error information if an error occurs
+* `changefeed(result)`: a callback that receives a changefeed result document
+* `error(error)`: a callback that receives error information if an error occurs
 
 Read the documentation for `watch` for more details on returned changefeed dowcuments.
 
-## Collection.watch() {#watch}
+## Collection.watch {#watch}
 
 
 Convert a query into a [changefeed][feed]. This returns an Observable which receives real-time updates of the query's result set.
@@ -152,7 +154,7 @@ const channels = hz("channels");
 
 // receive all active channels, listing them every time a channel is
 // added, deleted or changed
-channels.watch().forEach(allChannels => {
+channels.watch().subscribe(allChannels => {
     console.log('Channels: ', allChannels);
 });
 ```
@@ -167,7 +169,7 @@ That will return output such as this:
 To get raw change documents:
 
 ```js
-channels.watch({rawChanges: true}).forEach(allChannels => {
+channels.watch({rawChanges: true}).subscribe(allChannels => {
     console.log('Change: ', allChannels)
 });
 ```
@@ -184,12 +186,12 @@ You can also use `watch` to turn more complex Horizon queries into changefeeds.
 
 ```js
 // only watch channels with 10 or more active users
-channels.above({users: 10}, "closed").watch().forEach(allChannels => {
+channels.above({users: 10}, "closed").watch().subscribe(allChannels => {
     console.log('Popular channels: ', allChannels);
 });
 
 // maintain an updating "top 10" channel list
-channels.order("users", "descending").limit(10).watch().forEach(allChannels => {
+channels.order("users", "descending").limit(10).watch().subscribe(allChannels => {
     console.log('Popular channels: ', allChannels);
 });
 ```
@@ -356,7 +358,7 @@ messages.order("time", "descending");
 Delete a single document from a Collection.
 
 ```js
-Collection.remove(integer | object)
+Collection.remove(id | object)
 ```
 
 The `remove` method may be called with either an object to be deleted or an `id` value. In the object case, the object must include an `id` key.
@@ -378,12 +380,12 @@ messages.remove({id: 101});
 messages.remove(101);
 ```
 
-## Collection.removeAll() {#removeall}
+## Collection.removeAll {#removeall}
 
 Delete multiple documents from a Collection.
 
 ```js
-Collection.removeAll([integer, integer, ...] | [object, object, ...])
+Collection.removeAll([id, id, ...] | [object, object, ...])
 ```
 
 The `removeAll` method must be called with an array of objects to be deleted, or `id` values to remove. The objects must have `id` keys. You can mix `id` values and objects within the array.
@@ -402,7 +404,7 @@ messages.removeAll(messageList);
 messages.removeAll([101, 103, 109]);
 ```
 
-## Collection.replace() {#replace}
+## Collection.replace {#replace}
 
 Replace one or more existing documents within a Collection.
 
@@ -439,7 +441,7 @@ messages.replace([
 ]);
 ```
 
-## Collection.store() {#store}
+## Collection.store {#store}
 
 Insert one or more new documents into a Collection.
 
@@ -476,7 +478,7 @@ messages.store([
 ]);
 ```
 
-## Collection.upsert() {#upsert}
+## Collection.upsert {#upsert}
 
 Insert one or more documents into a Collection, replacing existing ones or inserting new ones based on `id` value.
 

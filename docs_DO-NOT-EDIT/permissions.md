@@ -9,23 +9,40 @@ Horizon's permission system is based on a query whitelist. Any operation on a Ho
 
 A whitelist rule has three properties that define which operations it covers:
 
-* A [user group][users], or the `"default"` group if it should apply to all users (TODO: Marc says there might also be an `"unauthenticated"` group. We should mention it here and probably use it in all the examples below as well, so they work without setting up authentication first.)
+* A [user group][users]
 * A query template describing the type of operation
-* Optionally: A validator function written in JavaScript that can be used to check the contents of the accessed documents, or to implement more complex permission checks
+* An optional validator function written in JavaScript that can be used to check the contents of the accessed documents, or to implement more complex permission checks
 
 [users]: /docs/users
 
-For example the following rule allows users in the `"default"` group to read their own messages from the `messages` collection:
+You can use the special `"default"` group to create rules that apply to all users, authenticated or not. Or use the `"authenticated"` group to cover authenticated users only.
+
+<div class="infobox" markdown="1">
+**A Horizon application allows _no_ access to collections by default, even for authenticated users!** You can use rules with the `anyRead` and `anyWrite` placeholders on each collection to grant access:
 
 ```toml
-[groups.default.rules.read_own_messages]
+[groups.authenticated.rules.read]
+template = "collection('messages').anyRead()"
+
+[groups.authenticated.rules.write]
+template = "collection('messages').anyWrite()"
+```
+
+These rules would allow users in the `authenticated` group complete read and write access to the "messages" collection. Much finer-grained control is possible; read on for more information.
+</div>
+
+
+For example the following rule allows authenticated users to read their own messages from the `messages` collection:
+
+```toml
+[groups.authenticated.rules.read_own_messages]
 template = "collection('messages').findAll({owner: userId()})"
 ```
 
 This rule allows users to store new messages, as long as the new message has a correctly set `owner` field, a `message` field of type `string`, and no additional fields (apart from the auto-generated document ID):
 
 ```toml
-[groups.default.rules.store_message]
+[groups.authenticated.rules.store_message]
 template = "collection('messages').store({owner: userId(), message: any()})"
 # The template allows any value for the `message` field. We restrict it to strings by
 # using a validator function:
@@ -62,8 +79,6 @@ template = "QUERY_TEMPLATE"
 validator = "VALIDATOR_FUNCTION"
 ```
 
-The values of the fields are as follows:
-
 * `GROUP_NAME` is the name of a [user group][users] to which the rule should apply.
 * `RULE_NAME` is an arbitrary name to identify the rule.
 * `QUERY_TEMPLATE` must be a string that described the Horizon query that the rule applies to. See the section on [Query templates](#templates) for details.
@@ -76,14 +91,13 @@ Here is an example for a full schema file including collection and index specifi
 ```toml
 [collections.messages]
 indexes = [
-  "id",
   "owner"
 ]
 
-[groups.default.rules.read_own_messages]
+[groups.authenticated.rules.read_own_messages]
 template = "collection('messages').findAll({owner: userId()})"
 
-[groups.default.rules.store_message]
+[groups.authenticated.rules.store_message]
 template = "collection('messages').store({owner: userId(), message: any()})"
 validator = """
   (context, oldValue, newValue) => {
@@ -92,14 +106,7 @@ validator = """
 """
 ```
 
-You can extract the current schema from a Horizon cluster with the `hz get-schema` command:
-
-```bash
-# Export the current schema into `current_schema.toml`
-$ hz get-schema -o current_schema.toml
-```
-
-The `hz set-schema` command loads the new schema into the Horizon cluster:
+Load a schema file into the Horizon cluster with `hz set-schema`:
 
 ```bash
 # Import the schema from `new_schema.toml`
@@ -109,6 +116,13 @@ $ hz set-schema new_schema.toml
 `hz set-schema` replaces all existing rule, collection and index specifications. If loading the new schema causes collections to be deleted, the `hz set-schema` command will error. If you are sure that you want to delete those collections, you can specify the `--force` flag.
 
 The changed schema and permissions become effective immediately.
+
+You can extract the current schema from a Horizon cluster with the `hz get-schema` command:
+
+```bash
+# Export the current schema into `current_schema.toml`
+$ hz get-schema -o current_schema.toml
+```
 
 [toml]: https://github.com/toml-lang/toml
 
@@ -163,7 +177,7 @@ The `any()` placeholder matches any value.
 
 ```toml
 # Allow users to look up messages from any user
-[groups.default.rules.lookup_messages]
+[groups.authenticated.rules.lookup_messages]
 template = "collection('messages').findAll({owner: any()})"
 ```
 
@@ -171,7 +185,7 @@ You can also specify a list of legal values by passing them to the `any()` call:
 
 ```toml
 # Allow users to look up messages of type "shared" or "announcement"
-[groups.default.rules.lookup_public_messages]
+[groups.authenticated.rules.lookup_public_messages]
 template = "collection('messages').findAll({type: any('shared', 'announcement')})"
 ```
 
@@ -199,7 +213,7 @@ horizon('public_messages').order("year").above({year: 2015})
 `anyRead()` is not limited to whole collections. The following rule allows users to read their own messages, allowing them to add further restrictions or ordering constraints on the results:
 
 ```toml
-[groups.default.rules.read_own_messages]
+[groups.authenticated.rules.read_own_messages]
 template = "collection('messages').findAll({owner: userId()}).anyRead()"
 ```
 
@@ -215,15 +229,15 @@ template = "collection('messages').anyWrite()"
 
 ### `userId()` {#template-placeholders-userid}
 
-The `userId()` placeholder matches the ID of the currently authenticated user (see [Authentication][authentication]). If no user is currently authenticated, it will match the `null` value.
+The `userId()` placeholder matches the ID of the currently authenticated user (see [Authentication][auth]). If no user is currently authenticated, it will match the `null` value.
 
 ```toml
 # Allow users to read their own messages
-[groups.default.rules.read_own_messages]
+[groups.authenticated.rules.read_own_messages]
 template = "collection('messages').findAll({owner: userId()})"
 ```
 
-[authentication]: /docs/authentication
+[auth]: /docs/auth
 
 # Validator functions {#validator_functions}
 
@@ -234,10 +248,23 @@ The main use cases for validator functions are:
 * enforcing a data schema, including restrictions on value types or number ranges
 * implementing advanced restrictions that cannot be expressed with a query template
 
+A validator function receives either two or three arguments. For _read_ operations:
+
+* `context` is the current user document, as described in [Users and groups][users], or `null` if no user is logged in
+* `value` is the document being read
+
+For _write_ operations:
+
+* `context` is the current user document, as described in [Users and groups][users], or `null` if no user is logged in
+* `oldValue` contains the existing document before any write options, or `null` if a new document is being inserted
+* `newValue` contains the new document the application wants to write, or `null` if a document is being removed
+
+The validator function is expected to return either `true` or `false`.
+
 This whitelist rule allows store operations as long as the stored documents match a certain schema:
 
 ```toml
-[groups.default.rules.store_message]
+[groups.authenticated.rules.store_message]
 template = "collection('messages').store(any())"
 # We require the message to be of the form {id: number, message: string} and have no
 # extra fields.
@@ -255,7 +282,7 @@ validator = """
 We can also use a validator to restrict the types of updates that can be performed on a document. Here we add a rule that allows users to increment a counter value:
 
 ```toml
-[groups.default.rules.store_message]
+[groups.authenticated.rules.store_message]
 template = "collection('messages').replace({id: any(), counter: any()})"
 # The counter can only be incremented by one step at a time
 validator = """
@@ -264,8 +291,6 @@ validator = """
   }
 """
 ```
-
-A validator function for a read operation is called with two arguments, `context` and `value`. A validator function for a write operation is called with three arguments, `context`, `oldValue` and `newValue`. If a new document is inserted into the collection, `oldValue` is passed in as `null`. If a document gets removed, `newValue` will be `null`. The validator function is expected to return either `true` or `false`.
 
 ## Execution semantics {#validator_functions-semantics}
 
@@ -329,8 +354,3 @@ validator = """
 ```
 
 While there is no single rule that validates all results of the query, for each result there now is a matching rule for which the validator function passes.
-
-
-## The `context` object {#validator_functions-context}
-
-TODO: Describe the properties that are available in `context`

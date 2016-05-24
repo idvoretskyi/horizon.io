@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Run your Horizon application on Digital Ocean with One-Click app"
+title: "DigitalOcean adds one-click install for Horizon apps"
 author: Ryan Paul
 author_github: segphault
 ---

@@ -3,5 +3,7 @@
 project: horizon.io
 host: teapot@159.203.76.102
 port: 440
-jekyll_container: horizonio_jekyll
+# Name of the Jekyll service to rebuild site content
+rebuild_service: jekyll
+# Credentials from Quay
 robot_credentials: _docker/rethinkdb-horizonio-auth.json

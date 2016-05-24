@@ -3,6 +3,7 @@ layout: post
 title: "DigitalOcean adds one-click install for Horizon apps"
 author: Ryan Paul
 author_github: segphault
+published: false
 ---
 
 Yesterday we [announced][] the first release of Horizon, an open-source backend for

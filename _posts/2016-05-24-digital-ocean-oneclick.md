@@ -4,6 +4,7 @@ title: "RethinkDB partners with DigitalOcean for one-click Horizon app deploymen
 author: Ryan Paul
 author_twitter: segphault
 hero_image: 2016-05-24/horizon-digital-ocean.png
+permalink: blog/digital-ocean-oneclick/
 ---
 
 Last week we [announced][] the first release of Horizon, an open-source backend for

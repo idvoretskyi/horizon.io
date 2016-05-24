@@ -4,6 +4,7 @@ title: "Introducing Horizon: build realtime apps without writing backend code"
 author: Ryan Paul
 author_twitter: segphault
 hero_image: 2016-05-17/horizon-launch.png
+permalink: blog/horizon-launch/
 ---
 Today we are pleased to announce the first official release of
 [Horizon][horizon.io], an open-source backend that lets developers build and

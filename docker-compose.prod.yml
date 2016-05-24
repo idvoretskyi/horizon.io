@@ -1,5 +1,5 @@
 nginx:
-    image: quay.io/rethinkdb/horizon.io-nginx:docker
+    image: quay.io/rethinkdb/horizon.io-nginx:latest
 
 jekyll:
-    image: quay.io/rethinkdb/horizon.io-jekyll:docker
+    image: quay.io/rethinkdb/horizon.io-jekyll:latest

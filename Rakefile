@@ -34,13 +34,12 @@ task :clean do
 end
 
 desc 'Deploy Docker image'
-task :docker_deploy do
-    $c = $config['jekyll_container']
+task :docker_update do
     commands = [
         "cd #{$project}",
         compose('pull'),
         compose('build'),
-        compose("up -d #{$c}")
+        compose("up -d ")
     ]
     ssh(commands.join(' && '))
 end

@@ -1,6 +1,7 @@
 --- # Deployment config
 # Connection details for a remote web server
-web:
-    host: teapot@159.203.76.102
-    port: 440
-    jekyll_container: horizonio_jekyll
+project: horizon.io
+host: teapot@159.203.76.102
+port: 440
+jekyll_container: horizonio_jekyll
+robot_credentials: _docker/rethinkdb-horizonio-auth.json

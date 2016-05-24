@@ -2,7 +2,7 @@
 layout: post
 title: "Introducing Horizon: build realtime apps without writing backend code"
 author: Ryan Paul
-author_github: segphault
+author_twitter: segphault
 hero_image: 2016-05-17/horizon-launch.png
 ---
 Today we are pleased to announce the first official release of

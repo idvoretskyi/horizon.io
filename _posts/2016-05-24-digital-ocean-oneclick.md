@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "DigitalOcean adds one-click install for Horizon apps"
+title: "RethinkDB partners with DigitalOcean for one-click Horizon app deployment"
 author: Ryan Paul
-author_github: segphault
-published: false
+author_twitter: segphault
+hero_image: 2016-05-24/horizon-digital-ocean.png
 ---
 
-Yesterday we [announced][] the first release of Horizon, an open-source backend for
+Last week we [announced][] the first release of Horizon, an open-source backend for
 realtime web applications. Developers can use the Horizon server and its
 frontend client library to build and scale realtime web applications without
 writing any backend code. Built on top of RethinkDB, Horizon extends the
@@ -22,11 +22,11 @@ RethinkDB, Node.js, the Horizon server, and Nginx. You can
 <!--more-->
 
 We're big fans of Digital Ocean's affordable Linux VPS hosting. The One-Click
-Horizon droplet provides a great environment for rapid protyping. You can also
+Horizon droplet provides a great environment for rapid prototyping. You can also
 [deploy a full RethinkDB cluster][cluster] on Digital Ocean when you are ready
 to put your application into production.
 
-If you're using Digital Ocean for the firs time, you can use the promo code
+If you're using Digital Ocean for the first time, you can use the promo code
 `HORIZON10` to get $10 in server credit&mdash;enough to run a 1GB droplet for a month.
 We hope that you have an exciting voyage as you set sail toward the Horizon on
 Digital Ocean.

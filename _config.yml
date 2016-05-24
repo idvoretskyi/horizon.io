@@ -5,7 +5,7 @@ kramdown:
     syntax_highlighter: rouge
     hard_wrap: false
     toc_levels: '1,2'
-exclude: ['README.md', 'Dockerfile']
+exclude: ['README.md', 'Dockerfile', 'docker-compose.prod.yml', 'docker-compose.yml', 'Gemfile', 'Gemfile.lock', 'Rakefile']
 gems: ['jekyll-paginate']
 
 # Blog settings

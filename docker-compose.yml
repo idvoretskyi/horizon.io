@@ -1,0 +1,13 @@
+nginx:
+    build: _docker/nginx/.
+    container_name: horizonio_nginx
+    ports:
+        - "80:80"
+    volumes:
+        - /usr/share/nginx/html
+
+jekyll:
+    build: .
+    container_name: horizonio_jekyll
+    volumes_from:
+        - nginx

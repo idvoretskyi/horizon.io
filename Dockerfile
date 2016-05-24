@@ -1,28 +1,20 @@
-FROM nginx
+FROM ubuntu:16.04
 
 MAINTAINER Michael Glukhovsky, mike@rethinkdb.com
 
 RUN apt-get update && \
-    apt-get -y install supervisor && \
     apt-get -y install build-essential ruby ruby-dev && \
     apt-get -y autoremove && \
     apt-get -y autoclean && \
     gem install bundler
 
-COPY Gemfile Gemfile.lock /tmp/
-RUN bundle install --gemfile /tmp/Gemfile
-
-# Set up nginx
-COPY _docker/nginx.conf /etc/nginx/nginx.conf
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-
-# Supervisor manages running services
-RUN mkdir -p /var/log/supervisor
-COPY _docker/supervisor.conf /etc/supervisor/conf.d/
+# Set up Bundler assets
+WORKDIR /tmp
+COPY Gemfile* ./
+RUN bundle install
 
 # Copy assets
-COPY . /tmp/horizon.io/
-RUN bundle exec jekyll build -s /tmp/horizon.io/ -d /usr/share/nginx/html
+COPY ./ ./
 
-# Start services
-CMD ["supervisord", "-n"]
+# Build the output
+CMD ["bundle","exec","jekyll", "build", "-d", "/usr/share/nginx/html"]

@@ -21,7 +21,7 @@ const hz = Horizon();
 All arguments are optional. Pass them to `Horizon` in an object with option keys: `{secure: true}`.
 
 * `host`: the hostname of the Horizon server. This defaults to `window.location`, i.e., the machine that served the application to the client.
-* `secure`: a boolean indicating whether the server should use secure websockets. Defaults to `true`.
+* `secure`: a boolean indicating whether the server should use secure websockets. Defaults to `true` if static site is served via HTTPS, `false` otherwise.
 * `path`: the path the Horizon endpoint can be found under on `host`. Defaults to `"horizon"`.
 * `lazyWrites`: a boolean indicating whether write operations should be performed in a "lazy" fashion (see below). Defaults to `false`.
 * `authType`: a string indicating the authentication method to use for your application's users, one of `"unauthenticated"`, `"anonymous"`, or `"token"`. Defaults to `"unauthenticated"`. (See [Authentication][auth].)
@@ -51,7 +51,9 @@ query.subscribe(uuid => {
 });
 ```
 
-A `Horizon` object can be called as a function, taking a string as its argument. It returns a [Collection][c] object:
+A `Horizon` object can be called as a function, taking a string as its argument. It returns a [Collection][col] object:
+
+[col]: /api/collection
 
 ```js
 // Return the messages Collection
@@ -65,13 +67,13 @@ const messages = hz('messages');
 
 Establish a Horizon connection.
 
-Note that you can create a [Collection][c] from the `Horizon` instance without calling `connect()` first. Once you start using the collection, the connection will be automatically established.
+Note that you can create a [Collection][col] from the `Horizon` instance without calling `connect()` first. Once you start using the collection, the connection will be automatically established.
 
 ```js
 const hz = Horizon();
 
 // Get access to the messages collection
-const messages = hs('messages');
+const messages = hz('messages');
 
 // Start establishing the Horizon connection.
 // This step is optional. We can skip it and go directly to the next line.

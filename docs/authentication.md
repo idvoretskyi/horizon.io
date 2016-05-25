@@ -11,7 +11,7 @@ Horizon uses [JSON Web Tokens][jwt] for user authentication, an [open industry s
 [rfc7519]: https://tools.ietf.org/html/rfc7519 "RFC 7519: JSON Web Token (JWT)"
 [hoc]:     /api/horizon/#constructor
 
-* `unauthenticated`: share a single token among all users, and do not create entries in the Horizon user table. This essentially bypasses Horizon's authentication and permission system, and is best for applications that don't need to store any user data.
+* `unauthenticated`: share a single token among all users, and do not create entries in the Horizon user table. This essentially bypasses Horizon's authentication system, and is best for applications that don't need to store any user data.
 * `anonymous`: generate a unique token for each new user, and create an entry in the users table for the generated token. This allows authentication through the generated token, which is stored client-side in [localStorage][ls]. Your application will need to prompt for username and password.
 * `token`: verify a user's identify via a third-party [OAuth][] service provider. As with `anonymous`, the returned JWT will be stored client-side.
 
@@ -96,10 +96,9 @@ Use `authType: 'token'` when initializing Horizon in your client, and then use t
 ```js
 const horizon = Horizon({ authType: 'token' });
 if (!horizon.hasAuthToken()) {
-  horizon.authEndpoint('github').toPromise()
-    .then((endpoint) => {
+  horizon.authEndpoint('github').subscribe((endpoint) => {
       window.location.pathname = endpoint;
-    })
+    });
 } else {
   // We have a token already, do authenticated Horizon stuff here
 }
@@ -118,9 +117,18 @@ To delete all authentication tokens from localStorage, use `clearAuthTokens()`.
 Horizon.clearAuthTokens();
 ```
 
+## Accessing session data
+
+You can check whether a user is currently authenticated using the [Horizon.hasAuthToken][ha] method, and access their information with [Horizon.currentUser][cu]. For more information, read about [Users and groups][ug] and [Permissions and schema enforcement][perm].
+
+[ha]:   /api/horizon/#hasauthtoken
+[cu]:   /api/horizon/#currentuser
+[ug]:   /docs/users
+[perm]: /docs/permissions
+
 ## Notes about Horizon's OAuth support
 
-* Currently, no metadata from OAuth providers&mdash;for example, friend/following lists&mdash; can be requested. In the near future, Horizon will support authentication scopes for selected providers to request acess to these details, and returned metadata will be stored in the `Users` table.
+* Currently, no metadata from OAuth providers&mdash;for example, friend/following lists&mdash; can be requested. In the near future, Horizon will support authentication scopes for selected providers to request access to these details, and returned metadata will be stored in the `Users` table.
 * The redirection URL will be configurable in a future release.
 * [Passport][pp] integration is not currently on Horizon's roadmap; this decision was made to avoid tightly coupling Horizon with [Express][ex]. (A [Github issue][gi] may be opened to discuss this in the future.)
 

@@ -66,7 +66,7 @@ Passing the `--dev` flag to `hz serve` puts it in development mode, which makes 
 * A RethinkDB server is automatically started (`--start-rethinkdb`). This server is specifically for this Horizon application, and will create a `rethinkdb_data` folder in the working directory when started.
 * Horizon is served in "insecure mode," without requiring SSL/TLS (`--secure no`).
 * The permissions system is disabled (`--permissions no`).
-* Tables and indexes will automatically be created if they don't exist (`--auto-create-table` and `--auto-create-index`).
+* Tables and indexes will automatically be created if they don't exist (`--auto-create-collection` and `--auto-create-index`).
 * Static files will be served from the `dist` directory (`--serve-static ./dist`).
 
 You can find the complete list of [command line flags][server] for `hz serve` in the documentation for the [Horizon server][server].
@@ -314,6 +314,8 @@ While Horizon serves static files from the `dist` folder by default, you can use
 We recommend the first option, as that will prevent any possibly mismatches between the client library version and the Horizon server. However, if you're using [Webpack][] or a similar build setup, or requesting the `.js` library at load time isn't desirable, just add the client library as an NPM dependency (`npm install @horizon/client`).
 
 In your application, you'll need to include the Horizon client file, and specify the Horizon port number when initializing the connection.
+
+[webpack]: https://webpack.github.io/
 
 ```html
 <script src="localhost:8181/horizon/horizon.js"></script>

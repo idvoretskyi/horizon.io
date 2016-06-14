@@ -2,7 +2,7 @@
 layout: post
 title: Write about Horizon & you could win a prize!
 tags:
-- contest
+  - contest
 author: Christina Keelan
 author_github: kittybot
 --- 

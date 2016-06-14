@@ -4,6 +4,7 @@ title: Write about Horizon and you could win a prize!
 author: Christina Keelan
 author_github: kittybot
 hero_image: 2016-06-13/banner.png
+permalink: blog/hack-guides/
 --- 
 Starting today, we're sponsoring $500 for the best content written about
 Horizon during Pluralsight's [hack.guides() 2016 Tutorial

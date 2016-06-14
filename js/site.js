@@ -1,8 +1,18 @@
 $(document).ready(function() {
+    // Mobile menu: right side
+    //  -> open / close the right-side menu
+    $('.menu-trigger').click(function(event) {
+        event.preventDefault();
+        $('nav.mobile-menu').toggleClass('show-menu');
+    })
+
+    // YouTube embeds
     var video = '<div class="video"><iframe width="800" height="450" src="https://www.youtube.com/embed/zL5_EsF06DM?rel=0&amp;showinfo=0&autoplay=1&start=624" frameborder="0" allowfullscreen></iframe></div>'
     $('img.hz-video, div.play-button').click(function() {
         $(this).parent().html(video);
     });
+
+    // TODO - form validation rules
     // $('form[name=hz-developer-preview]').validate({
     //     rules: { email: { email: true } },
     //     submitHandler: function(form) { form.submit(); }

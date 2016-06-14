@@ -6,8 +6,6 @@
     display: flex;
     text-align: center;
 
-    @media (max-width: $mobile) { padding-top: 2.5rem;}
-
     .hero-left, .hero-right, .hero-center {
         background-position: bottom;
         background-repeat: no-repeat;
@@ -39,24 +37,28 @@
         font-size: 4rem;
         font-weight: 500;
         line-height: 6rem;
-        @media (max-width: $mobile) {
-            font-size: 3.1rem;
-            line-height: 5rem;
-            margin-bottom: 3rem;
-            span { display: block; }
-        }
     }
     h2 {
         font-size: 2.6rem;
         font-weight: 200;
         line-height: 4.3rem;
-        @media (max-width: $mobile) {
+    }
+    .button { margin-top: 2rem; }
+
+    @media (max-width: $mobile) {
+        padding-top: 2.5rem;
+        h1 {
+            font-size: 3.1rem;
+            line-height: 5rem;
+            margin-bottom: 3rem;
+            span { display: block; }
+        }
+        h2 {
             font-size: 2.6  rem;
             line-height: 4rem;
             span { display: block; }
         }
     }
-    .button { margin-top: 2rem; }
 }
 
 .intro {
@@ -65,29 +67,18 @@
     background-size: 100% 101%;
     padding: 5.5rem 0;
 
-    @media (max-width: $mobile) { padding: 4rem 0; }
-
     .site-container {
         display: flex;
         flex-wrap: nowrap;
         align-items: top;
-        @media (max-width: $medium) {
-            flex-direction: column;
-            align-items: stretch;
-        }
     }
 
     .intro-content {
         flex-basis: 620px;
-        @media (max-width: $medium) { flex-basis: initial; }
         h1 {
             font-size: 2.7rem;
             margin-bottom: 3.2rem;
             line-height: 4rem;
-            @media (max-width: $mobile) {
-                font-size: 2.5rem;
-                line-height: 3.9rem;
-            }
         }
         p {
             font-size: 2.1rem;
@@ -101,10 +92,27 @@
         margin-top: -3rem;
         padding-left: 70px;
         svg .testing-canvas { fill: none; }
-        @media (max-width: $medium) {
+    }
+
+    @media (max-width: $medium) {
+        .site-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .intro-content { flex-basis: initial; }
+        .hz-animation {
             margin-top: 0;
             padding-left: 0;
             margin: 0 auto
+        }
+    }
+
+    @media (max-width: $mobile) {
+        padding: 4rem 0;
+
+        .intro-content h1 {
+            font-size: 2.5rem;
+            line-height: 3.9rem;
         }
     }
 }

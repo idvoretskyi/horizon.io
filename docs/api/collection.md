@@ -49,8 +49,9 @@ messages.order("id").findAll({from: "bob"}).fetch().subscribe(msg => console.log
 
 ## Collection.fetch {#fetch}
 
-Return a [RxJS Observable](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) containing the query result set as an array.
+Return a [RxJS Observable][rjso] containing the query result set as an array.
 
+[rjso]: http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
 
 ```js
 Collection.fetch()
@@ -137,7 +138,7 @@ Read the documentation for `watch` for more details on returned changefeed dowcu
 ## Collection.watch {#watch}
 
 
-Convert a query into a [changefeed][feed]. This returns a [RxJS Observable](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) containing the query result set.
+Convert a query into a [changefeed][feed]. This returns a [RxJS Observable][rjso] containing the query result set.
 
 
 [feed]: https://rethinkdb.com/docs/changefeeds/javascript/
@@ -414,14 +415,19 @@ The `removeAll` method must be called with an array of objects to be deleted, or
 const hz = Horizon();
 const messages = hz("messages");
 
-// get all messages from Bob and Agatha...
-var messageList = messages.findAll({from: "bob"}, {from: "agatha"}).fetch();
-
-// ...and delete them
-messages.removeAll(messageList);
-
 // delete messages with the IDs 101, 103 and 109
 messages.removeAll([101, 103, 109]);
+
+// find and delete all messages from Bob and Agatha
+// this example uses RxJS's "map" command to execute the removeAll and return
+// another observable to pass to subscribe for reporting purposes
+messages.findAll({from: 'bob'}, {from: 'agatha'}).fetch()
+    .mergeMap(messageList => messages.removeAll(messageList))
+    .subscribe({
+        next(id)   { console.log(`id ${id} was removed`) },
+        error(err) { console.error(`Error: ${err}`) },
+        complete() { console.log('All items removed successfully') }
+    });
 ```
 
 ## Collection.replace {#replace}
@@ -536,3 +542,21 @@ messages.upsert([
     }
 ]);
 ```
+
+## RxJS Observable methods and operators
+
+The `fetch` and `watch` methods return [RxJS Observables][rjso], and make the following methods available:
+
+* [publishReplay()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-publishReplay)
+* [scan()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-scan)
+* [filter()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-filter)
+* [map()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-map)
+* [toArray()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-toArray)
+* [do()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-do)
+* [catch()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-catch)
+* [concatMap()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-concatMap)
+* [filter()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-filter)
+* [share()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-share)
+* [mergeMap()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mergeMap)
+* [defaultIfEmpty()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-defaultIfEmpty)
+* [take()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-take)

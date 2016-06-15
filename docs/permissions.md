@@ -371,7 +371,7 @@ A JSON Web Token will be printed to the console. Copy that token, and create a H
 var horizon = Horizon({
     authType: {
         token: "<token>",
-        storeLocally: true
+        storeLocally: false
     }
 });
 horizon.connect();

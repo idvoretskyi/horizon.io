@@ -89,9 +89,9 @@ Verify the configuration by running `hz serve` and browsing to `https://localhos
 
 If instead you only see empty brackets (e.g., `{ }`), ensure you've restarted the Horizon server, and that it's using the `.hz/config.toml` file you've edited.
 
-**Note:** If your application instantiates the Horizon server object to start it rather than using `hz serve`, you'll need to pass the OAuth endpoint to that object. Read "Configuring OAuth endpoints" in [Frameworks][fr] for details.
+**Note:** If your application embeds Horizon rather than using `hz serve`, you'll need to pass the OAuth endpoint to that object. Read "Configuring OAuth providers" in [Embedding Horizon][eh] for details.
 
-[fr]: /docs/frameworks
+[eh]: /docs/embed
 
 ## Configuring the client application
 

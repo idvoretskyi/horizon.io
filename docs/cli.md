@@ -14,13 +14,13 @@ The `hz` command line tool's primary function is to start a standalone Horizon s
 
 # init
 
-Initialize a new Horizon project. `hz init` with no argument will initialize a project in the current directory; `hz init <directory>` will initialize a project in the specified directory.
+Initialize a new Horizon project. `hz init` with no argument will initialize a project in the current directory; `hz init <directory>` will initialize a project in the specified directory, creating the directory if necessary. The project will be given the name of the specified directory (the current directory if no argument is given).
 
 # serve
 
 The `hz serve <project path>` command starts a Horizon server for the given Horizon project. Once started, it serves HTTP(S) requests for your application on the configured port.
 
-Every Horizon server requires a RethinkDB server to connect to. Use the `--connect <RethinkDB host>` option to connect to an existing RethinkDB server, or use `--start-rethinkdb` to automatically start a local RethinkDB server.
+Every Horizon server requires a RethinkDB server to connect to. Use the `--connect <RethinkDB host>` option to connect to an existing RethinkDB server, or use `--start-rethinkdb` to automatically start a local RethinkDB server. (Note that the `--dev` option for development mode includes `--start-rethinkdb` by default.)
 
 ## Command-line options {#serve-options}
 
@@ -28,7 +28,7 @@ Every Horizon server requires a RethinkDB server to connect to. Use the `--conne
 
 ### General options
 
-* `--project-name NAME, -n NAME` Name of the Horizon project. Determines the name of the RethinkDB database that stores the project data. Default: Last component of the project path
+* `--project-name NAME, -n NAME` Name of the Horizon project. Determines the name of the RethinkDB database that stores the project data.
 * `--serve-static [PATH]` Enable serving static files via HTTP(S). You can additionally specify the path from which static files will be served (default: `./dist`).
 * `--config PATH` Which [config file][config-file] to use. Default: `.hz/config.toml`
 * `--debug [yes|no]` Print additional debug output. Default: `no`
@@ -83,11 +83,13 @@ Development mode should never be enabled on a production server that is publicly
 
 Create a private and public TLS certificate pair for development. Running this will create two files, `horizon-cert.pem` and `horizon-key.pem`. These can be specified as options to `hz serve` or placed in the [configuration file][config-file].
 
+Note that the certificate created by `create-cert` uses no local identity information; the data is completely random. If you need to use an existing certificate or credentials, you'll have to create the certificate on your own using `openssl` or a similar tool.
+
 # get-schema
 
 Extract the currently defined Horizon schema, including validation rules, collection and index specifications, as a TOML file. For an example of this command in practice, read the section on "Configuring rules" in [Permissions and schema enforcement][perm].
 
-[perm]: /permissions/#configuring
+[perm]: /docs/permissions/#configuring
 
 Run `hz get-schema -h` for details on options.
 
@@ -101,4 +103,4 @@ Manually create a JSON Web Token for a user, allowing user bootstrapping. This i
 
 For more details, read "Making an admin auth token" in [Permissions and schema enforcement][admin].
 
-[admin]: /permissions/#admin
+[admin]: /docs/permissions/#admin

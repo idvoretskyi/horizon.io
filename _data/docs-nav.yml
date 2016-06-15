@@ -16,9 +16,9 @@
 - section:
     name: Building Horizon apps
     docs:
-        - name: Horizon server
-          id: server
-          url: /docs/server
+        - name: Horizon CLI
+          id: cli
+          url: /docs/cli
         - name: Authentication
           id: auth
           url: /docs/auth
@@ -40,12 +40,12 @@
         - name: Configuring Horizon
           id: config
           url: /docs/configuration
+        - name: Embedding Horizon
+          id: embed
+          url: /docs/embed
         - name: Example apps
           id: examples
           url: /docs/examples
-#        - name: Integrations (*)
-#          id: Integrations
-#          url: /docs/integrations
 #        - name: Deploying Horizon apps
 #          id: deployment
 #          url: /docs/deployment

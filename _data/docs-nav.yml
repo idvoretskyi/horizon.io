@@ -46,6 +46,9 @@
         - name: Example apps
           id: examples
           url: /docs/examples
+        - name: Limitations
+          id: limitations
+          url: /docs/limitations
 #        - name: Deploying Horizon apps
 #          id: deployment
 #          url: /docs/deployment

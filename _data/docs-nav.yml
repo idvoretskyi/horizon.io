@@ -49,6 +49,9 @@
         - name: Limitations
           id: limitations
           url: /docs/limitations
+        - name: Horizon with Docker
+          id: docker
+          url: /docs/docker
 #        - name: Deploying Horizon apps
 #          id: deployment
 #          url: /docs/deployment

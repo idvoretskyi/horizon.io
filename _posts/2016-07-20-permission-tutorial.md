@@ -159,6 +159,7 @@ example, users who are not authenticated see a simple link that they can click
 to login. Authenticated users see a greeting that displays their user ID and a 
 link that allows them to logout.
 
+{% raw %}
 ```html
 <div id="app">
   <div v-if="userId">
@@ -193,6 +194,7 @@ link that allows them to logout.
   });
 </script>
 ```
+{% endraw %}
 
 When Vue initializes, it triggers the application's `ready` event handler. The 
 handler invokes `hasAuthToken` to check for a JWT in local storage. If it finds 
@@ -284,6 +286,7 @@ the bookmark array and assigns it to a property on the Vue instance.
 Using Vue's `v-for` directive, it's easy to set up data bindings that display 
 the bookmarks array in the application's user interface:
 
+{% raw %}
 ```html
 <div class="bookmark" v-for="item in bookmarks" track-by="id">
   <a href="{{item.bookmark.url}}">{{bookmark.bookmark.title}}</a>
@@ -293,6 +296,7 @@ the bookmarks array in the application's user interface:
   </a>
 </div>
 ```
+{% endraw %}
 
 The click handler for the "delete" link removes the object from the underlying 
 Horizon collection:
@@ -346,11 +350,11 @@ encapsulate the bookmark presentation in a simple Vue component that I reuse for
 
 # Permissions
 
+<img src="/images/posts/2016-07-22/permissions.png" style="width: 450px; float: right; display: inline-block;">
+
 When you are ready to add permissions to your application, you will want to run 
 Horizon without the `--dev` flag so that you can ensure that your permissions 
 work as expected.
-
-<img src="/images/posts/2016-07-22/permissions.png">
 
 Horizon's permission system relies on a query whitelist. When a client performs 
 a query, the Horizon server compares the query with whitelist entries until it 

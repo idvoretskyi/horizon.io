@@ -6,6 +6,8 @@ author_twitter: segphault
 permalink: blog/permission-tutorial/
 ---
 
+<img src="/images/posts/2016-07-22/bookmark.png" style="width: 450px; float: right; display: inline-block;">
+
 In this tutorial, I'll demonstrate how to build a social bookmark manager with 
 Horizon and the [Vue.js][] frontend framework. You can build the entire 
 application without writing a single line of backend code. This tutorial also 
@@ -31,6 +33,8 @@ database collections and indexes as needed. Development mode is obviously not
 safe for a production application, but it's ideal for rapid prototyping. As you 
 will see later in this tutorial, I typically use Horizon with the `--dev` option
  until I'm ready to start implementing and testing permissions.
+
+<!--more-->
 
 # Authentication
 

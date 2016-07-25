@@ -44,6 +44,9 @@ task :docker_update do
     ssh(commands.join(' && '))
 end
 
+desc 'Synonym for docker_update'
+task :deploy => :docker_update
+
 desc 'Restart Docker containers'
 task :docker_restart do
     scp(files=['docker-compose.yml', 'docker-compose.prod.yml'], remote_dest=$project)

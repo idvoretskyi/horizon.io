@@ -514,18 +514,18 @@ to the [official documentation][docs].
 * Horizon [permissions][permdoc] documentation
 * [Complete source code][repo] of the Thinkmark demo
 
-[install Horizon]: http://horizon.io/install/
-[Getting Started]: http://horizon.io/docs/getting-started/
+[install Horizon]: /install/
+[Getting Started]: /docs/getting-started/
 [JWT]: https://jwt.io/
 [ngrok]: https://ngrok.com/
 [local storage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-[oauth-docs]: http://horizon.io/docs/auth/
+[oauth-docs]: /docs/auth/
 [Vue.js]: https://vuejs.org/
 [repo]: https://github.com/rethinkdb/horizon-thinkmark
 [schema file]: https://github.com/rethinkdb/horizon-thinkmark/blob/master/schema.toml
-[do]: http://horizon.io/blog/digital-ocean-oneclick/
-[docs]: http://horizon.io/docs/
-[authdoc]: http://horizon.io/docs/auth/
-[permdoc]: http://horizon.io/docs/permissions/
-[ghoauth]: https://github.com/settings/applications
+[do]: /blog/digital-ocean-oneclick/
+[docs]: /docs/
+[authdoc]: /docs/auth/
+[permdoc]: /docs/permissions/
+[ghoauth]: /settings/applications
 

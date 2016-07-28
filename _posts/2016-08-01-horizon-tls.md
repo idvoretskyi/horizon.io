@@ -3,6 +3,7 @@ layout: post
 title: "TLS-enable your Horizon application with Let's Encrypt"
 author: Ryan Paul
 author_twitter: segphault
+hero_image: 2016-08-01/banner.png
 permalink: blog/letsencrypt-tutorial/
 ---
 

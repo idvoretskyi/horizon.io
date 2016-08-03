@@ -113,8 +113,8 @@ When you finish editing your `.hz/config.toml`, run your Horizon application
 with `hz serve`. You should be able to access it by visiting your domain with 
 the `HTTPS` protocol. If everything worked as expected, your browser will 
 display the lock sigil typically associated with a TLS-enabled website. When TLS
- is enabled, Horizon uses it for WebSocket connections in addition to HTTP 
-requests. If you look in the `Network` panel in Chrome's developer tools, you 
+is enabled, Horizon uses it for WebSocket connections in addition to serving static
+files with HTTPS. If you look in the `Network` panel in Chrome's developer tools, you 
 will see that Horizon's WebSocket connection uses the `WSS` protocol, the 
 WebSocket equivalent of `HTTPS`.
 

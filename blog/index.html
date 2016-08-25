@@ -50,12 +50,6 @@ body_class: blog
             <section class="pagination">
                 <a href="{{ paginator.next_page_path }}" class="pager older-posts">{% include icons/chevron-left.svg %}<span>Older posts</span></a>
                 <a href="{{ paginator.previous_page_path }}" class="pager newer-posts"><span>Newer posts</span> {% include icons/chevron-right.svg %} </a>
-                {% if paginator.next_page %}
-                    <a href="{{ paginator.next_page_path }}" class="button minimal older-posts">{% include icons/chevron-left.svg %} Older posts</a>
-                {% endif %}
-                {% if paginator.previous_page %}
-                    <a href="{{ paginator.previous_page_path }}" class="button minimal newer-posts">Newer posts {% include icons/chevron-right.svg %}</a>
-                {% endif %}
             </section>
         </section>
         {% include blog-sidebar.html %}

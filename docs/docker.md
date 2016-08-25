@@ -9,7 +9,7 @@ It's quick and easy to get Horizon up and running with Docker! The only dependen
 
 ## Our Docker images
 
-We provide two Docker images on Docker Hub: `horizon-dev` is for development purposes, and `horizon` is for your production environment.
+We provide two Docker images on Docker Hub: [horizon-dev](https://hub.docker.com/r/rethinkdb/horizon-dev/) is for development purposes, and [horizon](https://hub.docker.com/r/rethinkdb/horizon/) is for your production environment.
 
 Image | `horizon-dev` | `horizon`
 ------| ------------- | --------------
@@ -106,7 +106,7 @@ horizon:
     - "8181:80"
 ```
 
-Instead of adding environment variables, you could modify the `command` proprety to add the equivalent `hz serve` flags. We think using the variables keeps the file more readable.
+Instead of adding environment variables, you could modify the `command` property to add the equivalent `hz serve` flags. We think using the variables keeps the file more readable.
 
 ### Starting it up
 

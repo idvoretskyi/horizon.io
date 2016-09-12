@@ -124,14 +124,14 @@ In the internal database for your Horizon application, all of your application's
 When a user wants to log in, redirect them to the Horizon server endpoint that 
 initiates the authentication process for the given OAuth provider. You can get 
 the path by calling the `authEndpoint` method and specifying the desired 
-provider. You can assign the return value to the `window.location.pathname` 
-attribute to perform the redirect:
+provider. You can pass the return value to `window.location.replace(endpoint)` 
+to perform the redirect:
 
 ```javascript
 const horizon = Horizon();
 
 horizon.authEndpoint("github").subscribe(endpoint =>
-  location.pathname = endpoint);
+  window.location.replace(endpoint);
 ```
 
 Horizon sends the user to the GitHub website, which displays a prompt that that 
@@ -189,7 +189,7 @@ link that allows them to logout.
     methods: {
       login(ev) {
         horizon.authEndpoint("github").subscribe(endpoint =>
-          location.pathname = endpoint);
+          window.location.replace(endpoint);
       },
       logout(ev) {
         Horizon.clearAuthTokens();
@@ -252,7 +252,7 @@ const app = new Vue{
   methods: {
     login(ev) {
       horizon.authEndpoint("github").subscribe(endpoint =>
-        location.pathname = endpoint);
+        window.location.replace(endpoint);
     },
     logout(ev) {
       Horizon.clearAuthTokens();

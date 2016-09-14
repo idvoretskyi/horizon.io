@@ -514,6 +514,8 @@ to the [official documentation][docs].
 * Horizon [permissions][permdoc] documentation
 * [Complete source code][repo] of the Thinkmark demo
 
+> Note that this post has been updated to use the Horizon 2.0 API
+
 [install Horizon]: /install/
 [Getting Started]: /docs/getting-started/
 [JWT]: https://jwt.io/

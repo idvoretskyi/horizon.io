@@ -8,10 +8,14 @@ permalink: blog/permission-tutorial/
 
 <img src="/images/posts/2016-07-22/bookmark.png" style="width: 450px; float: right; display: inline-block;">
 
+_September 14: This post has been updated to use the Horizon 2.0 API._
+
 In this tutorial, I'll demonstrate how to build a social bookmark manager with 
 Horizon and the [Vue.js][] frontend framework. You can build the entire 
 application without writing a single line of backend code. This tutorial also 
 covers some of the best practices for developing with Horizon.
+
+<!--more-->
 
 # First steps
 
@@ -33,8 +37,6 @@ database collections and indexes as needed. Development mode is obviously not
 safe for a production application, but it's ideal for rapid prototyping. As you 
 will see later in this tutorial, I typically use Horizon with the `--dev` option
  until I'm ready to start implementing and testing permissions.
-
-<!--more-->
 
 # Authentication
 
@@ -124,14 +126,14 @@ In the internal database for your Horizon application, all of your application's
 When a user wants to log in, redirect them to the Horizon server endpoint that 
 initiates the authentication process for the given OAuth provider. You can get 
 the path by calling the `authEndpoint` method and specifying the desired 
-provider. You can assign the return value to the `window.location.pathname` 
-attribute to perform the redirect:
+provider. You can pass the return value to `window.location.replace(endpoint)` 
+to perform the redirect:
 
 ```javascript
 const horizon = Horizon();
 
 horizon.authEndpoint("github").subscribe(endpoint =>
-  location.pathname = endpoint);
+  window.location.replace(endpoint);
 ```
 
 Horizon sends the user to the GitHub website, which displays a prompt that that 
@@ -189,7 +191,7 @@ link that allows them to logout.
     methods: {
       login(ev) {
         horizon.authEndpoint("github").subscribe(endpoint =>
-          location.pathname = endpoint);
+          window.location.replace(endpoint);
       },
       logout(ev) {
         Horizon.clearAuthTokens();
@@ -252,7 +254,7 @@ const app = new Vue{
   methods: {
     login(ev) {
       horizon.authEndpoint("github").subscribe(endpoint =>
-        location.pathname = endpoint);
+        window.location.replace(endpoint);
     },
     logout(ev) {
       Horizon.clearAuthTokens();

@@ -8,7 +8,7 @@
         @media (max-width: $medium) {
             align-items: stretch;
         }
-        .intro {
+        .team-intro {
             margin-bottom: 20px;
         }
         .team {
@@ -25,11 +25,13 @@
         & > div {
           padding: 5px;
           text-align: center;
+          font-size: 2.0rem;
         }
     }
 
     img {
       max-width: 210px;
+      margin-bottom: 4px;
       transition: max-width 0.8s;
     }
 

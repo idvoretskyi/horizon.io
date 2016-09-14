@@ -8,10 +8,14 @@ permalink: blog/permission-tutorial/
 
 <img src="/images/posts/2016-07-22/bookmark.png" style="width: 450px; float: right; display: inline-block;">
 
+_September 14: This post has been updated to use the Horizon 2.0 API._
+
 In this tutorial, I'll demonstrate how to build a social bookmark manager with 
 Horizon and the [Vue.js][] frontend framework. You can build the entire 
 application without writing a single line of backend code. This tutorial also 
 covers some of the best practices for developing with Horizon.
+
+<!--more-->
 
 # First steps
 
@@ -33,8 +37,6 @@ database collections and indexes as needed. Development mode is obviously not
 safe for a production application, but it's ideal for rapid prototyping. As you 
 will see later in this tutorial, I typically use Horizon with the `--dev` option
  until I'm ready to start implementing and testing permissions.
-
-<!--more-->
 
 # Authentication
 
@@ -513,8 +515,6 @@ to the [official documentation][docs].
 * Horizon [authentication][authdoc] documentation
 * Horizon [permissions][permdoc] documentation
 * [Complete source code][repo] of the Thinkmark demo
-
-> Note that this post has been updated to use the Horizon 2.0 API
 
 [install Horizon]: /install/
 [Getting Started]: /docs/getting-started/

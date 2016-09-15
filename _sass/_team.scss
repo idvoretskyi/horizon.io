@@ -1,0 +1,61 @@
+ .team-main{
+
+    .site-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: top;
+        @media (max-width: $medium) {
+            align-items: stretch;
+        }
+        .team-intro {
+            margin-bottom: 20px;
+        }
+        .team {
+            margin-bottom: 30px;
+        }
+    }
+
+    .team-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        & > div {
+          padding: 5px;
+          text-align: center;
+          font-size: 2.0rem;
+        }
+    }
+
+    img {
+      max-width: 210px;
+      margin-bottom: 4px;
+      transition: max-width 0.8s;
+    }
+
+    @media (max-width: $medium) {
+      img {
+        max-width: 195px;
+        transition: max-width 0.8s;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      img {
+        max-width: 180px;
+        transition: max-width 0.8s;
+      }
+    }
+
+
+    .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-top: 50px;
+            margin-bottom: 50px;
+    }
+
+}
